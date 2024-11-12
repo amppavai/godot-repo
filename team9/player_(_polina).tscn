@@ -1,105 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://cedbb5u7iygx8"]
+[gd_scene load_steps=11 format=3 uid="uid://cedbb5u7iygx8"]
 
 [ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://tilemap.png" id="1_ok7ks"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_qqm8g"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfl0o"]
-texture = ExtResource("1_ok7ks")
-margins = Vector2i(5, 4)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-5:4/0/terrain_set = 0
-5:4/0/terrain = 0
-5:4/0/terrains_peering_bit/right_side = 0
-5:4/0/terrains_peering_bit/bottom_right_corner = 0
-5:4/0/terrains_peering_bit/bottom_side = 0
-5:4/0/terrains_peering_bit/bottom_left_corner = 0
-5:4/0/terrains_peering_bit/left_side = 0
-5:4/0/terrains_peering_bit/top_left_corner = 0
-5:4/0/terrains_peering_bit/top_side = 0
-6:4/0 = 0
-6:4/0/terrain_set = 0
-6:4/0/terrains_peering_bit/bottom_left_corner = 0
-6:4/0/terrains_peering_bit/left_side = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-5:5/0/terrain_set = 0
-5:5/0/terrains_peering_bit/top_side = 0
-5:5/0/terrains_peering_bit/top_right_corner = 0
-6:5/0 = 0
-6:5/0/terrain_set = 0
-6:5/0/terrains_peering_bit/top_left_corner = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wjhs"]
 
-[sub_resource type="TileSet" id="TileSet_yesrf"]
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Terrain 0"
-terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-terrain_set_0/terrain_1/name = "Terrain 1"
-terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_dfl0o")
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1h3e"]
+atlas = ExtResource("1_ok7ks")
+region = Rect2(17, 68, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kwvp"]
+atlas = ExtResource("1_ok7ks")
+region = Rect2(102, 68, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylkgw"]
+atlas = ExtResource("1_ok7ks")
+region = Rect2(0, 68, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmfbc"]
+atlas = ExtResource("1_ok7ks")
+region = Rect2(34, 68, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egx2t"]
+atlas = ExtResource("1_ok7ks")
+region = Rect2(85, 68, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6abo"]
+atlas = ExtResource("1_ok7ks")
+region = Rect2(102, 68, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n3p2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1h3e")
+}],
+"loop": true,
+"name": &"gun jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kwvp")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylkgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmfbc")
+}],
+"loop": true,
+"name": &"using gun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egx2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6abo")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player ( Polina)" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_yesrf")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65536, 327680, 4)
-
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="Node2D" type="Node2D" parent="CharacterBody2D"]
+script = ExtResource("1_qqm8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(37, 10)
+shape = SubResource("CircleShape2D_6wjhs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 3
+position = Vector2(38.125, 12.375)
+scale = Vector2(1.51471, 1.45588)
+sprite_frames = SubResource("SpriteFrames_n3p2g")
+animation = &"walk"
+frame_progress = 0.871512

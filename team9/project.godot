@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Team9"
+run/main_scene="res://temp(Polina).tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=3.9
 
 [rendering]
 
