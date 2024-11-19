@@ -17,8 +17,17 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/scale=3.9
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[layer_names]
+
+2d_physics/layer_1="GROUND"
+2d_physics/layer_2="PLAYER"
+2d_physics/layer_3="ENEMY"
+2d_physics/layer_4="COLLECTIBLE/TOOL"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
