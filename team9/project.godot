@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Team9"
+run/main_scene="res://temp(Polina).tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -20,6 +21,9 @@ config/icon="res://icon.svg"
 2d_physics/layer_2="PLAYER"
 2d_physics/layer_3="ENEMY"
 2d_physics/layer_4="COLLECTIBLE/TOOL"
+[display]
+
+window/stretch/scale=3.9
 
 [rendering]
 
