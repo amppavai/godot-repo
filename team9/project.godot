@@ -15,15 +15,17 @@ run/main_scene="res://temp(Polina).tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [layer_names]
 
 2d_physics/layer_1="GROUND"
 2d_physics/layer_2="PLAYER"
 2d_physics/layer_3="ENEMY"
 2d_physics/layer_4="COLLECTIBLE/TOOL"
-[display]
-
-window/stretch/scale=3.9
 
 [rendering]
 
