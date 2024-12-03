@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ogyqqemv101i"]
+
+[ext_resource type="Texture2D" uid="uid://dnswhb4i81byl" path="res://Level Design/backgrounds/sky_cloud.png" id="1_6ak05"]
+[ext_resource type="Texture2D" uid="uid://buyhssvjks6mr" path="res://Level Design/backgrounds/mountain2.png" id="2_vflpj"]
+[ext_resource type="Texture2D" uid="uid://gedfnvgwppu3" path="res://Level Design/backgrounds/pine2.png" id="3_8unmw"]
+[ext_resource type="Texture2D" uid="uid://cbcq7otx2obj" path="res://Level Design/backgrounds/pine1.png" id="4_ju5v8"]
+
+[node name="level1_option2" type="Node2D"]
+
+[node name="Sky" type="Sprite2D" parent="."]
+texture = ExtResource("1_6ak05")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Mountain" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(0, 89)
+texture = ExtResource("2_vflpj")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Dark pines" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(0, 103)
+texture = ExtResource("3_8unmw")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Light pines" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(0, 153)
+texture = ExtResource("4_ju5v8")
+centered = false

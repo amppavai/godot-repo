@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cedbb5u7iygx8"]
 
-[ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://Level Design/tilemap/tilemap.png" id="1_ok7ks"]
+[ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://Level Design/player_tilemap/tilemap.png" id="1_ok7ks"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_qqm8g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wjhs"]
@@ -86,4 +86,7 @@ position = Vector2(38.125, 12.375)
 scale = Vector2(1.51471, 1.45588)
 sprite_frames = SubResource("SpriteFrames_n3p2g")
 animation = &"walk"
-frame_progress = 0.871512
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_bottom = 235
