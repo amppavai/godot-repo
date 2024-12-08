@@ -1,6 +1,67 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx3olc3g3uxsg"]
+[gd_scene load_steps=24 format=3 uid="uid://dx3olc3g3uxsg"]
 
+[ext_resource type="Script" path="res://Enemies/Dog/dog.gd" id="1_4pclu"]
 [ext_resource type="Texture2D" uid="uid://bqv5selcnfexe" path="res://Enemies/Dog/Canine_Black_Full_FX.png" id="1_8fum1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2dh2"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp17l"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syabj"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(0, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaai4"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(48, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cydms"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(96, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c26et"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(144, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q24ps"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(192, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4opy"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(144, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b04vr"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(192, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48sob"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(240, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1877"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(0, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toc22"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(48, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4guqv"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(96, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lpo6"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(144, 128, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eknj"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(192, 128, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7o48"]
 atlas = ExtResource("1_8fum1")
@@ -22,6 +83,61 @@ region = Rect2(144, 0, 48, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_r2dh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp17l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syabj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaai4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cydms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c26et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q24ps")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4opy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b04vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48sob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1877")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toc22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4guqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lpo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eknj")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_p7o48")
 }, {
 "duration": 1.0,
@@ -34,8 +150,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_qcjcx")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"Idle",
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s38pa"]
@@ -43,9 +159,13 @@ radius = 12.0
 height = 34.0
 
 [node name="Dog" type="CharacterBody2D"]
+script = ExtResource("1_4pclu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6vsnv")
+animation = &"Attack"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 5)
