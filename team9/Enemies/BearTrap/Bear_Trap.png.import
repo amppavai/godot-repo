@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djxdqruolwbig"
-path="res://.godot/imported/BearTrap.png-30f00b0d5824c3f92d348529a85ce960.ctex"
+uid="uid://dbogishs06sc4"
+path="res://.godot/imported/Bear_Trap.png-69a0b5d073b6af2997c2efa134746cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Traps/BearTrap/BearTrap.png"
-dest_files=["res://.godot/imported/BearTrap.png-30f00b0d5824c3f92d348529a85ce960.ctex"]
+source_file="res://Enemies/BearTrap/Bear_Trap.png"
+dest_files=["res://.godot/imported/Bear_Trap.png-69a0b5d073b6af2997c2efa134746cd6.ctex"]
 
 [params]
 
