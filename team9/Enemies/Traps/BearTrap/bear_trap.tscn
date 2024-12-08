@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://mtn6ja4qb8j6"]
+
+[ext_resource type="Texture2D" uid="uid://djxdqruolwbig" path="res://Enemies/Traps/BearTrap/BearTrap.png" id="1_1i3or"]
+[ext_resource type="Script" path="res://Enemies/Traps/BearTrap/bear_trap.gd" id="1_7xy2a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db4m8"]
+atlas = ExtResource("1_1i3or")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf2he"]
+atlas = ExtResource("1_1i3or")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3060"]
+atlas = ExtResource("1_1i3or")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbgja"]
+atlas = ExtResource("1_1i3or")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rokk"]
+atlas = ExtResource("1_1i3or")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ueuqi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db4m8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf2he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3060")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbgja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rokk")
+}],
+"loop": false,
+"name": &"Activate",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1np34"]
+size = Vector2(258.46, 58)
+
+[node name="BearTrap" type="Area2D"]
+position = Vector2(-6, 0)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_7xy2a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -3)
+scale = Vector2(0.0935342, 0.0935342)
+sprite_frames = SubResource("SpriteFrames_ueuqi")
+animation = &"Activate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -5.96046e-08)
+scale = Vector2(0.0735123, 0.0735123)
+shape = SubResource("RectangleShape2D_1np34")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dx3olc3g3uxsg"]
+
+[ext_resource type="Texture2D" uid="uid://bqv5selcnfexe" path="res://Enemies/Dog/Canine_Black_Full_FX.png" id="1_8fum1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7o48"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnows"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jic4"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcjcx"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vsnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7o48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnows")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jic4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcjcx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s38pa"]
+radius = 12.0
+height = 34.0
+
+[node name="Dog" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6vsnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_s38pa")

@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://dom5xm5kfkvgi"]
+
+[ext_resource type="Script" path="res://Enemies/Traps/Fire/fire.gd" id="1_23yn1"]
+[ext_resource type="Texture2D" uid="uid://l07cof5t0s28" path="res://Enemies/Traps/Fire/Fire.png" id="1_gutwj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc01o"]
+atlas = ExtResource("1_gutwj")
+region = Rect2(0, 0, 100, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wkgq"]
+atlas = ExtResource("1_gutwj")
+region = Rect2(100, 0, 100, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwmel"]
+atlas = ExtResource("1_gutwj")
+region = Rect2(200, 0, 100, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqx6e"]
+atlas = ExtResource("1_gutwj")
+region = Rect2(300, 0, 100, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp2m2"]
+atlas = ExtResource("1_gutwj")
+region = Rect2(400, 0, 100, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exdvs"]
+atlas = ExtResource("1_gutwj")
+region = Rect2(500, 0, 100, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ucw7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc01o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wkgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwmel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqx6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp2m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exdvs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vqav3"]
+radius = 11.8471
+height = 23.6942
+
+[node name="Fire" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_23yn1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.179246, 0.179246)
+sprite_frames = SubResource("SpriteFrames_ucw7h")
+autoplay = "default"
+frame = 2
+frame_progress = 0.586535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.79527, 1.3651)
+shape = SubResource("CapsuleShape2D_vqav3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
