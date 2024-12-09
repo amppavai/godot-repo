@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7k6tadm7opca"]
+
+[ext_resource type="Texture2D" uid="uid://dnswhb4i81byl" path="res://Level Design/backgrounds/sky_cloud.png" id="1_2ah1j"]
+[ext_resource type="Texture2D" uid="uid://buyhssvjks6mr" path="res://Level Design/backgrounds/mountain2.png" id="2_k3pks"]
+[ext_resource type="Texture2D" uid="uid://gedfnvgwppu3" path="res://Level Design/backgrounds/pine2.png" id="3_7yvo1"]
+[ext_resource type="Texture2D" uid="uid://cbcq7otx2obj" path="res://Level Design/backgrounds/pine1.png" id="4_2y8cu"]
+[ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://scenes/ground_level1.tscn" id="5_62sdc"]
+[ext_resource type="PackedScene" path="res://test_player_ani/ani_test_player.tscn" id="6_e7itc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4besf"]
+radius = 6.58094
+
+[node name="Parallax_Level1" type="Node2D"]
+position = Vector2(0, -532)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+position = Vector2(0, -2)
+texture = ExtResource("1_2ah1j")
+centered = false
+
+[node name="Mountain" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Mountain"]
+texture_filter = 1
+position = Vector2(0, 88)
+texture = ExtResource("2_k3pks")
+centered = false
+
+[node name="Dark pines" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Dark pines"]
+texture_filter = 1
+position = Vector2(-1, 137)
+texture = ExtResource("3_7yvo1")
+centered = false
+
+[node name="Light pines" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Light pines"]
+texture_filter = 1
+position = Vector2(0, 189)
+texture = ExtResource("4_2y8cu")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1335, 292)
+scale = Vector2(-4.56093, 4.75249)
+shape = SubResource("CircleShape2D_4besf")
+
+[node name="Ground(Level1)" parent="." instance=ExtResource("5_62sdc")]
+position = Vector2(58, -270)
+
+[node name="Player" parent="." instance=ExtResource("6_e7itc")]
+position = Vector2(37, 561)
