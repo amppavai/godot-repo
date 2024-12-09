@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2lukbpjymy40"]
 
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="2_6fy3c"]
-[ext_resource type="PackedScene" path="res://test_player_ani/ani_test_player.tscn" id="5_8chqo"]
+[ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="5_8chqo"]
 
 [node name="Main" type="Node2D"]
 texture_filter = 1

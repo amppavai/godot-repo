@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" path="res://test_player_ani/tile_0046.png" id="4_ovqtm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sevr5"]
-size = Vector2(36.3333, 57)
+size = Vector2(26, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87hpx"]
 atlas = ExtResource("2_urrs1")
@@ -63,13 +63,13 @@ animations = [{
 script = ExtResource("1_6iysd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2.50001)
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_sevr5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
 position = Vector2(0, -1)
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_o7n7o")
 animation = &"idle"
 autoplay = "idle"
