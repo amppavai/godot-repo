@@ -28,6 +28,8 @@ window/stretch/scale=3.0
 2d_physics/layer_2="PLAYER"
 2d_physics/layer_3="ENEMY"
 2d_physics/layer_4="COLLECTIBLE/TOOL"
+2d_physics/layer_5="PROPS/DECORATION"
+2d_physics/layer_6="JUMP_PLATFORMS"
 
 [rendering]
 

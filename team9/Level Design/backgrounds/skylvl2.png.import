@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byabx1tben26r"
-path="res://.godot/imported/houses&trees_bg.png-d83bef8c6b543a5d831520d8b3e161dd.ctex"
+uid="uid://ddwbgn2drrb8y"
+path="res://.godot/imported/skylvl2.png-833041356ae3404b39bb72999939664f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level Design/backgrounds/houses&trees_bg.png"
-dest_files=["res://.godot/imported/houses&trees_bg.png-d83bef8c6b543a5d831520d8b3e161dd.ctex"]
+source_file="res://Level Design/backgrounds/skylvl2.png"
+dest_files=["res://.godot/imported/skylvl2.png-833041356ae3404b39bb72999939664f.ctex"]
 
 [params]
 

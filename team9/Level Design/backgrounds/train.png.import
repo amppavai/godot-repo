@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byabx1tben26r"
-path="res://.godot/imported/houses&trees_bg.png-d83bef8c6b543a5d831520d8b3e161dd.ctex"
+uid="uid://ck85kp51uhqdc"
+path="res://.godot/imported/train.png-f47c73d9c21b00bb99912e862cd7ec62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level Design/backgrounds/houses&trees_bg.png"
-dest_files=["res://.godot/imported/houses&trees_bg.png-d83bef8c6b543a5d831520d8b3e161dd.ctex"]
+source_file="res://Level Design/backgrounds/train.png"
+dest_files=["res://.godot/imported/train.png-f47c73d9c21b00bb99912e862cd7ec62.ctex"]
 
 [params]
 
