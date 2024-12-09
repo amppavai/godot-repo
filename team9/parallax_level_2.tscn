@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://c11sialomk8mk"]
 
 [ext_resource type="Texture2D" path="res://Level Design/backgrounds/sky copy.png" id="2_hwf5h"]
-[ext_resource type="Texture2D" path="res://Level Design/backgrounds/clouds2.png" id="3_d1151"]
-[ext_resource type="Texture2D" path="res://Level Design/backgrounds/houses&trees_bg.png" id="4_h0obi"]
+[ext_resource type="Texture2D" uid="uid://carrpuwqb6m07" path="res://Level Design/backgrounds/clouds2.png" id="3_d1151"]
+[ext_resource type="Texture2D" uid="uid://b6h437qjfysv7" path="res://Level Design/backgrounds/houses&trees_bg.png" id="4_h0obi"]
 [ext_resource type="Texture2D" uid="uid://rctxc85etpnr" path="res://Level Design/decor/city/train.png" id="5_3xaoy"]
-[ext_resource type="Texture2D" path="res://Level Design/backgrounds/houses.png" id="5_qk7pw"]
+[ext_resource type="Texture2D" uid="uid://8o1lcc81wua6" path="res://Level Design/backgrounds/houses.png" id="5_qk7pw"]
 [ext_resource type="PackedScene" uid="uid://3ep3ywau3l5y" path="res://ground_level2.tscn" id="7_3cdeg"]
-[ext_resource type="Texture2D" path="res://Level Design/backgrounds/car_trees_etc.png" id="7_i061a"]
-[ext_resource type="PackedScene" path="res://test_player_ani/ani_test_player.tscn" id="8_kojwe"]
+[ext_resource type="Texture2D" uid="uid://c5mm8ynbatrjy" path="res://Level Design/backgrounds/car_trees_etc.png" id="7_i061a"]
+[ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="8_kojwe"]
 
 [node name="Parallax_Level2" type="Node2D"]
 

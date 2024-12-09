@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed = 200.0
-@export var jump_velocity = -400.0
+@export var jump_velocity = -500.0
 @export var acceleration : float = 15.0
 @export var jumps = 1
 
@@ -46,6 +46,11 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, acceleration/2)
 		#option 2: stop in place immediately
 		#velocity.x = move_toward(velocity.x, 0, speed)
+	if Input.is_action_pressed("ui_right"):
+		$AnimatedSprite2D.flip_h = false
+	elif Input.is_action_pressed("ui_left"):
+		$AnimatedSprite2D.flip_h = true
+		
 
 	update_state()
 	move_and_slide()

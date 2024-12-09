@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://gedfnvgwppu3" path="res://Level Design/backgrounds/pine2.png" id="3_7yvo1"]
 [ext_resource type="Texture2D" uid="uid://cbcq7otx2obj" path="res://Level Design/backgrounds/pine1.png" id="4_2y8cu"]
 [ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://scenes/ground_level1.tscn" id="5_62sdc"]
-[ext_resource type="PackedScene" path="res://test_player_ani/ani_test_player.tscn" id="6_e7itc"]
+[ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="6_e7itc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4besf"]
 radius = 6.58094
