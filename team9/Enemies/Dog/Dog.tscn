@@ -155,7 +155,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s38pa"]
-radius = 12.0
+radius = 11.0
 height = 34.0
 
 [node name="Dog" type="CharacterBody2D"]
@@ -163,9 +163,8 @@ script = ExtResource("1_4pclu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6vsnv")
-animation = &"Attack"
-frame = 6
-frame_progress = 1.0
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 5)
