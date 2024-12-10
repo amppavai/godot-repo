@@ -75,15 +75,13 @@ collision_layer = 2
 script = ExtResource("1_qqm8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(37, 10)
+position = Vector2(-1.24997, -2.00002)
 shape = SubResource("CircleShape2D_6wjhs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
-position = Vector2(38.125, 12.375)
+position = Vector2(-0.124966, 0.37498)
 scale = Vector2(1.51471, 1.45588)
 sprite_frames = SubResource("SpriteFrames_n3p2g")
 animation = &"walk"
 frame_progress = 0.871512
-
-[node name="Player ( Polina)" type="Node2D" parent="."]

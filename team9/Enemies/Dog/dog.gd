@@ -11,25 +11,25 @@ var cd = false
 
 func _physics_process(delta: float) -> void:
 	var dist = player.position.distance_to(position)
-	
+	print(dist)
 	if not cd and not isAttacking:
 		if target == false:
 			$AnimatedSprite2D.play("Idle")
-		elif dist <= 80:
+		elif dist <= 31:
+			if player.position.x > position.x:
+				$AnimatedSprite2D.flip_h = true
+			else:
+				$AnimatedSprite2D.flip_h = false
 			$AnimatedSprite2D.play("Attack")
 			isAttacking = true
 		else:
 			$AnimatedSprite2D.play("Run")
 			velocity = position.direction_to(player.position) * speed
-			if velocity.x < 0:
-				scale.x = 1
+			if player.position.x > position.x:
+				$AnimatedSprite2D.flip_h = true
 			else:
-				scale.x = -1
+				$AnimatedSprite2D.flip_h = false
 	elif not cd:
-		if player.position.x > position.x:
-			scale.x = -1
-		else:
-			scale.x = 1
 		velocity.x = 0
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
@@ -38,7 +38,6 @@ func _physics_process(delta: float) -> void:
 				player.isInvincible = true
 				player.health -= 10
 				player.showDamage(1, 10)"""
-	
 	if hp <= 0:
 		$AnimatedSprite2D.play("Death")
 	
@@ -48,6 +47,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Attack":
+		print("after attack " + str(scale.x))
 		isAttacking = false
 		cd = true
 		$Timer.start(1)
