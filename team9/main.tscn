@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2lukbpjymy40"]
+[gd_scene load_steps=3 format=3 uid="uid://c2lukbpjymy40"]
 
 [ext_resource type="PackedScene" uid="uid://p1r6kyv04vqr" path="res://level_1.tscn" id="1_8o510"]
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="2_6fy3c"]
-[ext_resource type="PackedScene" uid="uid://cc8owolabuxl1" path="res://Enemies/Slime/Slime.tscn" id="4_8wubm"]
-[ext_resource type="PackedScene" uid="uid://bltcd40j1hfbu" path="res://Wall.tscn" id="5_gccn6"]
 
 [node name="main(yolanda)" type="Node2D"]
 position = Vector2(-1, -3)
@@ -13,14 +11,3 @@ position = Vector2(-1, 260)
 
 [node name="Level1(Ani)" parent="." instance=ExtResource("1_8o510")]
 position = Vector2(0, 0)
-
-[node name="StaticBody2D" parent="." instance=ExtResource("5_gccn6")]
-position = Vector2(386, 320)
-scale = Vector2(22.2, 1)
-
-[node name="Slime" parent="." node_paths=PackedStringArray("A") instance=ExtResource("4_8wubm")]
-position = Vector2(426, 274)
-A = NodePath("../Node2D")
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(169, 277)

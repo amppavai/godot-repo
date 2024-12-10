@@ -205,9 +205,8 @@ animations = [{
 radius = 11.0
 height = 34.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11kvm"]
-radius = 33.1395
-height = 67.4418
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmsts"]
+size = Vector2(71.6825, 57.0566)
 
 [node name="Dog" type="CharacterBody2D"]
 script = ExtResource("1_4pclu")
@@ -227,9 +226,9 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-44, -5)
+position = Vector2(-50.5, -0.499999)
 scale = Vector2(2.52502, 0.613426)
-shape = SubResource("CapsuleShape2D_11kvm")
+shape = SubResource("RectangleShape2D_tmsts")
 
 [node name="Timer" type="Timer" parent="."]
 
