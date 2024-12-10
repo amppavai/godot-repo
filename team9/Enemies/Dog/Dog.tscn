@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dx3olc3g3uxsg"]
+[gd_scene load_steps=31 format=3 uid="uid://dx3olc3g3uxsg"]
 
 [ext_resource type="Script" path="res://Enemies/Dog/dog.gd" id="1_4pclu"]
 [ext_resource type="Texture2D" uid="uid://bqv5selcnfexe" path="res://Enemies/Dog/Canine_Black_Full_FX.png" id="1_8fum1"]
@@ -79,6 +79,30 @@ region = Rect2(96, 0, 48, 32)
 atlas = ExtResource("1_8fum1")
 region = Rect2(144, 0, 48, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmbx8"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(240, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35n2n"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(0, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ns8c"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(48, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f862x"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(96, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyb4g"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(144, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij36v"]
+atlas = ExtResource("1_8fum1")
+region = Rect2(192, 64, 48, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6vsnv"]
 animations = [{
 "frames": [{
@@ -152,18 +176,45 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmbx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35n2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ns8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f862x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyb4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij36v")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s38pa"]
 radius = 11.0
 height = 34.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11kvm"]
+radius = 33.1395
+height = 67.4418
+
 [node name="Dog" type="CharacterBody2D"]
 script = ExtResource("1_4pclu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6vsnv")
-animation = &"Idle"
+animation = &"Attack"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -171,4 +222,18 @@ position = Vector2(-4, 5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_s38pa")
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-44, -5)
+scale = Vector2(2.52502, 0.613426)
+shape = SubResource("CapsuleShape2D_11kvm")
+
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

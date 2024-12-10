@@ -1,25 +1,36 @@
 extends CharacterBody2D
 
 @export var speed = 150
-@export var range = 200
+@onready var target = false
 @export var hp = 100
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAttacking = false
 @onready var player = $"../Player ( Polina)"
+@onready var timer = $"../Timer"
+var cd = false
 
 func _physics_process(delta: float) -> void:
 	var dist = player.position.distance_to(position)
-	if dist < range and dist > 50:
-		$AnimatedSprite2D.play("Idle")
-		velocity = position.direction_to(player.position) * speed
-		if velocity.x < 0:
-			$AnimatedSprite2D.flip_h = false
-		else:
-			$AnimatedSprite2D.flip_h = true
-	if dist <= 50:
-		$AnimatedSprite2D.play("Attack")
-		isAttacking = true
 	
+	if not cd and not isAttacking:
+		if target == false:
+			$AnimatedSprite2D.play("Idle")
+		elif dist <= 80:
+			$AnimatedSprite2D.play("Attack")
+			isAttacking = true
+		else:
+			$AnimatedSprite2D.play("Run")
+			velocity = position.direction_to(player.position) * speed
+			if velocity.x < 0:
+				scale.x = 1
+			else:
+				scale.x = -1
+	elif not cd:
+		if player.position.x > position.x:
+			scale.x = -1
+		else:
+			scale.x = 1
+		velocity.x = 0
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
 			var player = collision.get_collider()
@@ -38,6 +49,22 @@ func _physics_process(delta: float) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Attack":
 		isAttacking = false
-		#await get_tree().create_timer(1.0).timeout
+		cd = true
+		$Timer.start(1)
+		$AnimatedSprite2D.play("Idle")
 	elif $AnimatedSprite2D.animation == "Death":
 		queue_free()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		modulate = Color.DARK_RED
+		target = true
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is Player:
+		target = false
+		modulate = Color.WHITE
+
+func _on_timer_timeout() -> void:
+	cd = false

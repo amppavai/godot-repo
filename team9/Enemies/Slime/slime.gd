@@ -8,28 +8,24 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var hp = 100
 @export var A: Node2D
-@export var B: Node2D
 @export var flip = true
-var toB = false
+var toA = true
 var isAttacking = false
-
-func _ready() -> void:
-	print("A " + str(A.global_position))
-	print("B " + str(B.global_position))
+@onready var pos = position
 
 func move():
-	if toB:
-		velocity.x = SPEED
-		if position.distance_to(B.position) <= 50:
+	if toA:
+		velocity.x = -SPEED
+		if position.distance_to(A.position) <= 10:
 			velocity.x = 0
 			$AnimatedSprite2D.flip_h = flip
-			toB = false
+			toA = false
 	else:
-		velocity.x = -SPEED
-		if position.distance_to(A.position) <= 50:
+		velocity.x = SPEED
+		if position.distance_to(pos) <= 10:
 			velocity.x = 0
 			$AnimatedSprite2D.flip_h = not flip
-			toB = true
+			toA = true
 
 func _physics_process(delta: float) -> void:
 	move()
