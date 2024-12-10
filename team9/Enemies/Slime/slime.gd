@@ -29,7 +29,7 @@ func move():
 
 func _physics_process(delta: float) -> void:
 	move()
-	velocity.y += gravity
+	#velocity.y += gravity
 	move_and_slide()
 	
 	if position.distance_to(player.position) < 50:

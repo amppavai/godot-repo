@@ -34,10 +34,10 @@ func _physics_process(delta: float) -> void:
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
 			var player = collision.get_collider()
+			
 			"""if player is Player:
-				player.isInvincible = true
-				player.health -= 10
-				player.showDamage(1, 10)"""
+				$Bite.play()
+				player.health -= 10"""
 	if hp <= 0:
 		$AnimatedSprite2D.play("Death")
 	
