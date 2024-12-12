@@ -11,7 +11,3 @@ position = Vector2(-15, 176)
 visible = false
 position = Vector2(40, 20)
 scale = Vector2(2, 2)
-
-[node name="test_player_ani" parent="." instance=ExtResource("5_8chqo")]
-visible = false
-position = Vector2(49, -149)
