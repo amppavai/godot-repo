@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2lukbpjymy40"]
 
-[ext_resource type="PackedScene" uid="uid://p1r6kyv04vqr" path="res://level_1.tscn" id="1_8o510"]
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="2_6fy3c"]
+[ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="5_8chqo"]
 
-[node name="main(yolanda)" type="Node2D"]
-position = Vector2(-1, -3)
+[node name="Main" type="Node2D"]
+texture_filter = 1
+position = Vector2(-15, 176)
 
 [node name="Player ( Polina)" parent="." instance=ExtResource("2_6fy3c")]
 visible = false
