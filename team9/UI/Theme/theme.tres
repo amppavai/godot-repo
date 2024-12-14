@@ -1,0 +1,40 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cioetp3wqiol1"]
+
+[ext_resource type="FontFile" uid="uid://c2i478v7kckmf" path="res://UI/Theme/DungeonFont.ttf" id="1_r6frk"]
+[ext_resource type="Texture2D" uid="uid://cjm885jf3mu23" path="res://UI/Theme/BackgroundButtons1.png" id="2_5ugdy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lqowa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_334cs"]
+texture = ExtResource("2_5ugdy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbmxx"]
+texture = ExtResource("2_5ugdy")
+texture_margin_left = 20.0
+texture_margin_top = 5.0
+texture_margin_right = 25.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vvbwm"]
+texture = ExtResource("2_5ugdy")
+modulate_color = Color(0.980392, 0.917647, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3isp"]
+
+[resource]
+Button/colors/font_color = Color(0, 0.396206, 0.226035, 1)
+Button/colors/font_focus_color = Color(0, 0.396078, 0.227451, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.670964, 6.48562e-06, 0.0570965, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_r6frk")
+Button/styles/focus = SubResource("StyleBoxEmpty_lqowa")
+Button/styles/hover = SubResource("StyleBoxTexture_334cs")
+Button/styles/normal = SubResource("StyleBoxTexture_fbmxx")
+Button/styles/pressed = SubResource("StyleBoxTexture_vvbwm")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_l3isp")
