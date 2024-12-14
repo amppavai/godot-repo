@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bci3xs1uhdtw1"]
+
+[ext_resource type="Shader" path="res://UI/MainMenu.gdshader" id="1_hmo87"]
+[ext_resource type="Texture2D" uid="uid://dw2cy0jyadthi" path="res://UI/Theme/Background_MainMenu.png" id="2_fu0os"]
+[ext_resource type="Texture2D" uid="uid://b8tiuk1skggrv" path="res://UI/Theme/Blackboard.png" id="3_8tg4o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jcaoo"]
+shader = ExtResource("1_hmo87")
+shader_parameter/tint_color = Vector4(0, 0, 0, 0.5)
+
+[node name="Credits" type="Node2D"]
+
+[node name="Credits background" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Credits background"]
+material = SubResource("ShaderMaterial_jcaoo")
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fu0os")
+
+[node name="TextureRect2" type="TextureRect" parent="Credits background"]
+offset_left = 232.0
+offset_top = 120.0
+offset_right = 1684.0
+offset_bottom = 947.0
+texture = ExtResource("3_8tg4o")
