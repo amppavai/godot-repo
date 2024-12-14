@@ -1,33 +1,26 @@
-[gd_scene load_steps=11 format=3 uid="uid://cedbb5u7iygx8"]
+[gd_scene load_steps=10 format=3 uid="uid://cedbb5u7iygx8"]
 
-[ext_resource type="Texture2D" path="res://Level Design/player_tilemap/tilemap.png" id="1_ok7ks"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_qqm8g"]
+[ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://tilemap.png" id="2_42qvk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wjhs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1h3e"]
-atlas = ExtResource("1_ok7ks")
 region = Rect2(17, 68, 17, 17)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_egx2t"]
-atlas = ExtResource("1_ok7ks")
-region = Rect2(85, 68, 17, 17)
+[sub_resource type="AtlasTexture" id="AtlasTexture_l67e8"]
+atlas = ExtResource("2_42qvk")
+region = Rect2(84, 68, 17, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kwvp"]
-atlas = ExtResource("1_ok7ks")
-region = Rect2(102, 68, 17, 17)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtmcu"]
+atlas = ExtResource("2_42qvk")
+region = Rect2(101, 68, 17, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylkgw"]
-atlas = ExtResource("1_ok7ks")
 region = Rect2(0, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmfbc"]
-atlas = ExtResource("1_ok7ks")
 region = Rect2(34, 68, 17, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c6abo"]
-atlas = ExtResource("1_ok7ks")
-region = Rect2(102, 68, 17, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n3p2g"]
 animations = [{
@@ -41,7 +34,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_egx2t")
+"texture": SubResource("AtlasTexture_l67e8")
 }],
 "loop": true,
 "name": &"idle",
@@ -49,7 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0kwvp")
+"texture": SubResource("AtlasTexture_xtmcu")
 }],
 "loop": true,
 "name": &"jump",
@@ -68,10 +61,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_egx2t")
+"texture": SubResource("AtlasTexture_l67e8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c6abo")
+"texture": SubResource("AtlasTexture_xtmcu")
 }],
 "loop": true,
 "name": &"walk",
@@ -91,7 +84,7 @@ texture_filter = 3
 position = Vector2(-0.124966, 0.37498)
 scale = Vector2(1.51471, 1.45588)
 sprite_frames = SubResource("SpriteFrames_n3p2g")
-animation = &"idle"
+animation = &"walk"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
