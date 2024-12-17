@@ -6,7 +6,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAttacking = false
 @onready var player = $"../Player ( Polina)"
-@onready var timer = $"../Timer"
+@onready var timer = $Timer
 var cd = false
 
 func _physics_process(delta: float) -> void:
