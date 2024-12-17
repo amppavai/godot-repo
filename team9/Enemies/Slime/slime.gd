@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 100
 
-@onready var player = $"../Player ( Polina)"
+@export var player : Node2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
