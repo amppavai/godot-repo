@@ -1,3 +1,4 @@
+# Xavier
 extends CharacterBody2D
 
 const SPEED = 100
@@ -29,7 +30,7 @@ func move():
 
 func _physics_process(delta: float) -> void:
 	move()
-	#velocity.y += gravity
+	velocity.y += gravity
 	move_and_slide()
 	
 	if position.distance_to(player.position) < 50:
@@ -40,10 +41,8 @@ func _physics_process(delta: float) -> void:
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
 			var player = collision.get_collider()
-			"""if player is Player and not player.isInvincible:
-				player.isInvincible = true
-				player.health -= 10
-				player.showDamage(1, 10)"""
+			"""if player is Player:
+				player.health -= 10"""
 	
 	if hp <= 0:
 		$AnimatedSprite2D.play("Death")
