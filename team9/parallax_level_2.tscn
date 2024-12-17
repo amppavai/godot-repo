@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c11sialomk8mk"]
+[gd_scene load_steps=10 format=3 uid="uid://c11sialomk8mk"]
 
-[ext_resource type="Texture2D" path="res://Level Design/backgrounds/sky copy.png" id="2_hwf5h"]
-[ext_resource type="Texture2D" uid="uid://carrpuwqb6m07" path="res://Level Design/backgrounds/clouds2.png" id="3_d1151"]
-[ext_resource type="Texture2D" uid="uid://b6h437qjfysv7" path="res://Level Design/backgrounds/houses&trees_bg.png" id="4_h0obi"]
+[ext_resource type="Texture2D" uid="uid://35mj6dgr6c3s" path="res://Level Design/backgrounds/sky copy.png" id="2_hwf5h"]
+[ext_resource type="Texture2D" uid="uid://c65mo2nnkd3t7" path="res://Level Design/backgrounds/clouds2.png" id="3_d1151"]
+[ext_resource type="Texture2D" uid="uid://byabx1tben26r" path="res://Level Design/backgrounds/houses&trees_bg.png" id="4_h0obi"]
 [ext_resource type="Texture2D" uid="uid://rctxc85etpnr" path="res://Level Design/decor/city/train.png" id="5_3xaoy"]
-[ext_resource type="Texture2D" uid="uid://8o1lcc81wua6" path="res://Level Design/backgrounds/houses.png" id="5_qk7pw"]
+[ext_resource type="Texture2D" uid="uid://c6ng0e7pc6gxn" path="res://Level Design/backgrounds/houses.png" id="5_qk7pw"]
 [ext_resource type="PackedScene" uid="uid://3ep3ywau3l5y" path="res://ground_level2.tscn" id="7_3cdeg"]
-[ext_resource type="Texture2D" uid="uid://c5mm8ynbatrjy" path="res://Level Design/backgrounds/car_trees_etc.png" id="7_i061a"]
+[ext_resource type="Texture2D" uid="uid://dp1ugck7bs761" path="res://Level Design/backgrounds/car_trees_etc.png" id="7_i061a"]
+[ext_resource type="Texture2D" uid="uid://bp0bg8enxl7cy" path="res://Level Design/backgrounds/sand&objects2.png" id="7_uel2h"]
 [ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="8_kojwe"]
 
 [node name="Parallax_Level2" type="Node2D"]
@@ -17,7 +18,7 @@ transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0)
-motion_mirroring = Vector2(670, 0)
+motion_mirroring = Vector2(688, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 texture_filter = 1
@@ -26,7 +27,7 @@ centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 0)
-motion_mirroring = Vector2(670, 0)
+motion_mirroring = Vector2(688, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
 texture_filter = 1
@@ -35,7 +36,7 @@ centered = false
 
 [node name="Far buildings" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 0)
-motion_mirroring = Vector2(670, 0)
+motion_mirroring = Vector2(688, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Far buildings"]
 texture_filter = 1
@@ -44,7 +45,7 @@ centered = false
 
 [node name="Near buildings" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 0)
-motion_mirroring = Vector2(670, 0)
+motion_mirroring = Vector2(688, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Near buildings"]
 texture_filter = 1
@@ -69,9 +70,15 @@ texture_filter = 1
 texture = ExtResource("7_i061a")
 centered = false
 
+[node name="ThemePark" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ThemePark"]
+position = Vector2(3143.75, 271.25)
+texture = ExtResource("7_uel2h")
+
 [node name="Ground(Level2)" parent="." instance=ExtResource("7_3cdeg")]
 position = Vector2(28, -250)
 scale = Vector2(0.5, 0.5)
 
-[node name="Player" parent="." instance=ExtResource("8_kojwe")]
+[node name="AniTestPlayer" parent="." instance=ExtResource("8_kojwe")]
 position = Vector2(54, 29)

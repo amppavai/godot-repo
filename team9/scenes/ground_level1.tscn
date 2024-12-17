@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=4 uid="uid://chu16rr4cv5q4"]
 
-[ext_resource type="Texture2D" path="res://Level Design/levels_tilemaps/Tiles.png" id="1_ujqq5"]
-[ext_resource type="Texture2D" path="res://Level Design/levels_tilemaps/Props-Rocks.png" id="2_xwgse"]
-[ext_resource type="Texture2D" path="res://Level Design/levels_tilemaps/Tree-Assets.png" id="3_ut6ef"]
+[ext_resource type="Texture2D" uid="uid://b52q5dnfri68w" path="res://Level Design/levels_tilemaps/Tiles.png" id="1_ujqq5"]
+[ext_resource type="Texture2D" uid="uid://dg06k13cy84b0" path="res://Level Design/levels_tilemaps/Props-Rocks.png" id="2_xwgse"]
+[ext_resource type="Texture2D" uid="uid://c34pohpe5vibo" path="res://Level Design/levels_tilemaps/Tree-Assets.png" id="3_ut6ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7nit"]
-size = Vector2(22406.2, 32)
+size = Vector2(22404.2, 36)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfchm"]
 texture = ExtResource("1_ujqq5")
@@ -3993,7 +3993,7 @@ sources/2 = SubResource("TileSetAtlasSource_vsaro")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(11139.1, 1136)
+position = Vector2(11140.1, 1134)
 shape = SubResource("RectangleShape2D_l7nit")
 
 [node name="PlatformMapLevel1" type="TileMap" parent="."]
