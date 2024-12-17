@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dom5xm5kfkvgi"]
+[gd_scene load_steps=25 format=3 uid="uid://dom5xm5kfkvgi"]
 
 [ext_resource type="Script" path="res://Enemies/Fire/fire.gd" id="1_23yn1"]
 [ext_resource type="Texture2D" uid="uid://csi2mk6iggowx" path="res://Enemies/Fire/Fire+Sparks-Sheet.png" id="2_oit7i"]
+[ext_resource type="AudioStream" uid="uid://buey50nj437f7" path="res://Enemies/Fire/fire.mp3" id="3_j2v5f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pcjs"]
 atlas = ExtResource("2_oit7i")
@@ -166,5 +167,12 @@ frame_progress = 0.225881
 position = Vector2(1, -14)
 scale = Vector2(0.79527, 1.3651)
 shape = SubResource("CapsuleShape2D_vqav3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_j2v5f")
+volume_db = -20.745
+autoplay = true
+max_distance = 300.0
+parameters/looping = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
