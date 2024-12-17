@@ -1,33 +1,33 @@
-[gd_scene load_steps=11 format=3 uid="uid://cedbb5u7iygx8"]
+[gd_scene load_steps=11 format=3 uid="uid://x4671hyjwij6"]
 
-[ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://Level Design/player_tilemap/tilemap.png" id="1_ok7ks"]
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_qqm8g"]
+[ext_resource type="Script" path="res://ani_test_2.gd" id="1_espl3"]
+[ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://Level Design/player_tilemap/tilemap.png" id="2_fwf4j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wjhs"]
 radius = 10.25
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1h3e"]
-atlas = ExtResource("1_ok7ks")
+atlas = ExtResource("2_fwf4j")
 region = Rect2(17, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egx2t"]
-atlas = ExtResource("1_ok7ks")
+atlas = ExtResource("2_fwf4j")
 region = Rect2(85, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kwvp"]
-atlas = ExtResource("1_ok7ks")
+atlas = ExtResource("2_fwf4j")
 region = Rect2(102, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylkgw"]
-atlas = ExtResource("1_ok7ks")
+atlas = ExtResource("2_fwf4j")
 region = Rect2(0, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmfbc"]
-atlas = ExtResource("1_ok7ks")
+atlas = ExtResource("2_fwf4j")
 region = Rect2(34, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6abo"]
-atlas = ExtResource("1_ok7ks")
+atlas = ExtResource("2_fwf4j")
 region = Rect2(102, 68, 17, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n3p2g"]
@@ -79,9 +79,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="ani_test_2" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_qqm8g")
+script = ExtResource("1_espl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.24997, -2.00002)

@@ -1,17 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2lukbpjymy40"]
+[gd_scene load_steps=4 format=3 uid="uid://c2lukbpjymy40"]
 
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="2_6fy3c"]
-[ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="5_8chqo"]
+[ext_resource type="PackedScene" uid="uid://c7k6tadm7opca" path="res://parallax_level1.tscn" id="2_i7ini"]
+[ext_resource type="PackedScene" uid="uid://x4671hyjwij6" path="res://ani_test_2.tscn" id="2_rdkt4"]
 
 [node name="Main" type="Node2D"]
 texture_filter = 1
 position = Vector2(-15, 176)
 
-[node name="Player ( Polina)" parent="." instance=ExtResource("2_6fy3c")]
-visible = false
-position = Vector2(40, 20)
-scale = Vector2(2, 2)
+[node name="Parallax_Level1" parent="." instance=ExtResource("2_i7ini")]
+position = Vector2(14, -713)
 
-[node name="test_player_ani" parent="." instance=ExtResource("5_8chqo")]
+[node name="ani_test_2" parent="." instance=ExtResource("2_rdkt4")]
 visible = false
-position = Vector2(49, -149)
+position = Vector2(55, -145)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_6fy3c")]
+position = Vector2(34, -146)
