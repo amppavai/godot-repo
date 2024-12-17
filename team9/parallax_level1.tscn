@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7k6tadm7opca"]
+[gd_scene load_steps=9 format=3 uid="uid://cr3o5bglehkxi"]
 
 [ext_resource type="Texture2D" uid="uid://dnswhb4i81byl" path="res://Level Design/backgrounds/sky_cloud.png" id="1_2ah1j"]
 [ext_resource type="Texture2D" uid="uid://buyhssvjks6mr" path="res://Level Design/backgrounds/mountain2.png" id="2_k3pks"]
 [ext_resource type="Texture2D" uid="uid://gedfnvgwppu3" path="res://Level Design/backgrounds/pine2.png" id="3_7yvo1"]
 [ext_resource type="Texture2D" uid="uid://cbcq7otx2obj" path="res://Level Design/backgrounds/pine1.png" id="4_2y8cu"]
-[ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://Scenes/ground_level1.tscn" id="5_62sdc"]
+[ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://scenes/ground_level1.tscn" id="5_62sdc"]
 [ext_resource type="PackedScene" uid="uid://mtn6ja4qb8j6" path="res://Enemies/BearTrap/bear_trap.tscn" id="7_q3bmb"]
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="9_gch70"]
 
@@ -64,6 +64,7 @@ position = Vector2(848, 841)
 
 [node name="Player_polina" parent="." instance=ExtResource("9_gch70")]
 position = Vector2(116, 493)
+speed = 100
 
 [node name="Area2D" type="Area2D" parent="."]
 

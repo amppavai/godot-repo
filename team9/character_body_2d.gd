@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
+class_name Player
 
-@export var jump_velocity = -300.0
+#camera limitations edited by Ani: top set to 0
 
-const speed = 100
+@export var jump_velocity = -400.0
+@export var speed = 100.0 #added by Ani
+
 var current_dir = "none"
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
