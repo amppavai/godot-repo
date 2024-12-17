@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmgu03ngldmph"
-path="res://.godot/imported/wires.png-b1f29e86df631b9568d3f621eca94bf6.ctex"
+uid="uid://crbwcmw6rijx1"
+path="res://.godot/imported/assets.png-4dbbdceb9923e3b43b33cad2aabf5601.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level Design/decor/city/wires.png"
-dest_files=["res://.godot/imported/wires.png-b1f29e86df631b9568d3f621eca94bf6.ctex"]
+source_file="res://Level Design/decor/city/assets.png"
+dest_files=["res://.godot/imported/assets.png-4dbbdceb9923e3b43b33cad2aabf5601.ctex"]
 
 [params]
 

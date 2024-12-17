@@ -59,7 +59,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="AniTestPlayer" type="CharacterBody2D"]
 script = ExtResource("1_6iysd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

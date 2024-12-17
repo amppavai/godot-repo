@@ -65,5 +65,5 @@ shape = SubResource("CircleShape2D_4besf")
 [node name="Ground(Level1)" parent="." instance=ExtResource("5_62sdc")]
 position = Vector2(58, -270)
 
-[node name="Player" parent="." instance=ExtResource("6_e7itc")]
+[node name="AniTestPlayer" parent="." instance=ExtResource("6_e7itc")]
 position = Vector2(37, 561)
