@@ -1,18 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://c11sialomk8mk"]
+[gd_scene load_steps=14 format=3 uid="uid://da32tc6ulqcj4"]
 
-[ext_resource type="Texture2D" uid="uid://35mj6dgr6c3s" path="res://Level Design/backgrounds/sky copy.png" id="2_hwf5h"]
-[ext_resource type="Texture2D" uid="uid://c65mo2nnkd3t7" path="res://Level Design/backgrounds/clouds2.png" id="3_d1151"]
-[ext_resource type="Texture2D" uid="uid://byabx1tben26r" path="res://Level Design/backgrounds/houses&trees_bg.png" id="4_h0obi"]
-[ext_resource type="Texture2D" uid="uid://rctxc85etpnr" path="res://Level Design/decor/city/train.png" id="5_3xaoy"]
-[ext_resource type="Texture2D" uid="uid://c6ng0e7pc6gxn" path="res://Level Design/backgrounds/houses.png" id="5_qk7pw"]
-[ext_resource type="PackedScene" uid="uid://3ep3ywau3l5y" path="res://ground_level2.tscn" id="7_3cdeg"]
-[ext_resource type="Texture2D" uid="uid://dp1ugck7bs761" path="res://Level Design/backgrounds/car_trees_etc.png" id="7_i061a"]
-[ext_resource type="Texture2D" uid="uid://bp0bg8enxl7cy" path="res://Level Design/backgrounds/sand&objects2.png" id="7_uel2h"]
-[ext_resource type="PackedScene" uid="uid://x4671hyjwij6" path="res://test_player_ani/ani_test_2.tscn" id="9_153vq"]
-[ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="10_nyvxe"]
-[ext_resource type="PackedScene" uid="uid://dom5xm5kfkvgi" path="res://Enemies/Fire/Fire.tscn" id="10_xjqh4"]
+[ext_resource type="Texture2D" uid="uid://35mj6dgr6c3s" path="res://Level Design/backgrounds/sky copy.png" id="1_3a0p6"]
+[ext_resource type="Script" path="res://next_level_2_test.gd" id="1_e8o2s"]
+[ext_resource type="Texture2D" uid="uid://c65mo2nnkd3t7" path="res://Level Design/backgrounds/clouds2.png" id="2_heh23"]
+[ext_resource type="Texture2D" uid="uid://byabx1tben26r" path="res://Level Design/backgrounds/houses&trees_bg.png" id="3_0mb1d"]
+[ext_resource type="Texture2D" uid="uid://c6ng0e7pc6gxn" path="res://Level Design/backgrounds/houses.png" id="4_6b0mw"]
+[ext_resource type="Texture2D" uid="uid://rctxc85etpnr" path="res://Level Design/decor/city/train.png" id="5_tkowv"]
+[ext_resource type="Texture2D" uid="uid://dp1ugck7bs761" path="res://Level Design/backgrounds/car_trees_etc.png" id="6_qqdha"]
+[ext_resource type="Texture2D" uid="uid://bp0bg8enxl7cy" path="res://Level Design/backgrounds/sand&objects2.png" id="7_0weic"]
+[ext_resource type="PackedScene" uid="uid://3ep3ywau3l5y" path="res://ground_level2.tscn" id="8_uj615"]
+[ext_resource type="PackedScene" uid="uid://x4671hyjwij6" path="res://test_player_ani/ani_test_2.tscn" id="9_rfv26"]
+[ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="10_nqlje"]
+[ext_resource type="PackedScene" uid="uid://dom5xm5kfkvgi" path="res://Enemies/Fire/Fire.tscn" id="11_cbqxk"]
 
-[node name="Parallax_Level2" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_da7os"]
+
+[node name="nextLevel2test" type="Area2D"]
+script = ExtResource("1_e8o2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_da7os")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scale = Vector2(0.8, 0.8)
@@ -24,7 +31,7 @@ motion_mirroring = Vector2(688, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 texture_filter = 1
-texture = ExtResource("2_hwf5h")
+texture = ExtResource("1_3a0p6")
 centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -33,7 +40,7 @@ motion_mirroring = Vector2(688, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
 texture_filter = 1
-texture = ExtResource("3_d1151")
+texture = ExtResource("2_heh23")
 centered = false
 
 [node name="Far buildings" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -42,7 +49,7 @@ motion_mirroring = Vector2(688, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Far buildings"]
 texture_filter = 1
-texture = ExtResource("4_h0obi")
+texture = ExtResource("3_0mb1d")
 centered = false
 
 [node name="Near buildings" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -51,7 +58,7 @@ motion_mirroring = Vector2(688, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Near buildings"]
 texture_filter = 1
-texture = ExtResource("5_qk7pw")
+texture = ExtResource("4_6b0mw")
 centered = false
 
 [node name="Train" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -60,7 +67,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Train"]
 texture_filter = 1
 position = Vector2(1234, 508)
-texture = ExtResource("5_3xaoy")
+texture = ExtResource("5_tkowv")
 centered = false
 
 [node name="Car and trees" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -69,30 +76,30 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Car and trees"]
 texture_filter = 1
-texture = ExtResource("7_i061a")
+texture = ExtResource("6_qqdha")
 centered = false
 
 [node name="ThemePark" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ThemePark"]
 position = Vector2(3143.75, 277.5)
-texture = ExtResource("7_uel2h")
+texture = ExtResource("7_0weic")
 
-[node name="Ground(Level2)" parent="." instance=ExtResource("7_3cdeg")]
-position = Vector2(28, -250)
+[node name="Level2_design" parent="." instance=ExtResource("8_uj615")]
+position = Vector2(26, -251)
 scale = Vector2(0.5, 0.5)
 
-[node name="ani_test_2" parent="." instance=ExtResource("9_153vq")]
+[node name="ani_test_2" parent="." instance=ExtResource("9_rfv26")]
 position = Vector2(66, 52)
 
-[node name="Player_polina" parent="." instance=ExtResource("10_nyvxe")]
+[node name="Player_polina" parent="." instance=ExtResource("10_nqlje")]
 visible = false
 position = Vector2(86, 16)
 
-[node name="Fire" parent="." instance=ExtResource("10_xjqh4")]
+[node name="Fire" parent="." instance=ExtResource("11_cbqxk")]
 position = Vector2(1824, 308)
 
-[node name="Fire2" parent="." instance=ExtResource("10_xjqh4")]
+[node name="Fire2" parent="." instance=ExtResource("11_cbqxk")]
 position = Vector2(1974, 309)
 
 [node name="dog_deleteLater" type="TextEdit" parent="."]
@@ -111,3 +118,5 @@ size_flags_vertical = 4
 size_flags_stretch_ratio = 0.3
 text = "dog here? Final boss, end of game"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

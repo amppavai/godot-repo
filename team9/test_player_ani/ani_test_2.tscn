@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://x4671hyjwij6"]
 
-[ext_resource type="Script" path="res://ani_test_2.gd" id="1_espl3"]
+[ext_resource type="Script" path="res://test_player_ani/ani_test_2.gd" id="1_espl3"]
 [ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://Level Design/player_tilemap/tilemap.png" id="2_fwf4j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wjhs"]

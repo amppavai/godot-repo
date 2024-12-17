@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=4 uid="uid://3ep3ywau3l5y"]
+[gd_scene load_steps=39 format=4 uid="uid://3ep3ywau3l5y"]
 
 [ext_resource type="Texture2D" uid="uid://b52q5dnfri68w" path="res://Level Design/levels_tilemaps/Tiles.png" id="1_s2g65"]
 [ext_resource type="Texture2D" uid="uid://dvr8c8445qcq4" path="res://Level Design/decor/city/VendingMachine_WGrass.png" id="2_mc383"]
 [ext_resource type="Texture2D" uid="uid://c3k1ryf5wxjgy" path="res://Level Design/levels_tilemaps/Buildings.png" id="2_q2bc6"]
+[ext_resource type="PackedScene" uid="uid://dom5xm5kfkvgi" path="res://Enemies/Fire/Fire.tscn" id="2_sav54"]
 [ext_resource type="Texture2D" uid="uid://naxqxpbdrtql" path="res://Level Design/decor/city/Clock_WGrass.png" id="3_fdwta"]
 [ext_resource type="Texture2D" uid="uid://8dmjlq68wtw5" path="res://Level Design/decor/city/VendingMachine_Moss.png" id="4_34i4x"]
 [ext_resource type="Texture2D" uid="uid://c1ku6aoayxqoh" path="res://Level Design/decor/city/Flowers_Assorted.png" id="5_7krs4"]
@@ -40,7 +41,10 @@ sources/0 = SubResource("TileSetAtlasSource_0whww")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7nit"]
 size = Vector2(22407.2, 45.5)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x000b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aml8v"]
+size = Vector2(20, 450)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5cg53"]
 texture = ExtResource("1_s2g65")
 6:0/0 = 0
 7:0/0 = 0
@@ -482,34 +486,34 @@ texture = ExtResource("1_s2g65")
 18:24/0 = 0
 19:24/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g0h7q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p3hkx"]
 texture = ExtResource("7_jloam")
 margins = Vector2i(1, 0)
 texture_region_size = Vector2i(16, 18)
 0:0/size_in_atlas = Vector2i(1, 3)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ct36"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atmx3"]
 texture = ExtResource("2_mc383")
 margins = Vector2i(2, 0)
 texture_region_size = Vector2i(17, 16)
 0:0/size_in_atlas = Vector2i(2, 3)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_058cs"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7a6lc"]
 texture = ExtResource("3_fdwta")
 margins = Vector2i(3, 0)
 texture_region_size = Vector2i(24, 16)
 0:0/size_in_atlas = Vector2i(1, 5)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ins2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ef32m"]
 texture = ExtResource("5_7krs4")
 texture_region_size = Vector2i(16, 25)
 0:0/size_in_atlas = Vector2i(4, 1)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0brl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dv05"]
 texture = ExtResource("3_fdwta")
 margins = Vector2i(4, 0)
 texture_region_size = Vector2i(23, 16)
@@ -517,12 +521,12 @@ texture_region_size = Vector2i(23, 16)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_unrm7"]
-sources/0 = SubResource("TileSetAtlasSource_x000b")
-sources/3 = SubResource("TileSetAtlasSource_0ct36")
-sources/4 = SubResource("TileSetAtlasSource_058cs")
-sources/6 = SubResource("TileSetAtlasSource_4ins2")
-sources/8 = SubResource("TileSetAtlasSource_u0brl")
-sources/11 = SubResource("TileSetAtlasSource_g0h7q")
+sources/0 = SubResource("TileSetAtlasSource_5cg53")
+sources/3 = SubResource("TileSetAtlasSource_atmx3")
+sources/4 = SubResource("TileSetAtlasSource_7a6lc")
+sources/6 = SubResource("TileSetAtlasSource_ef32m")
+sources/8 = SubResource("TileSetAtlasSource_1dv05")
+sources/11 = SubResource("TileSetAtlasSource_p3hkx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2vygp"]
 texture = ExtResource("2_q2bc6")
@@ -2248,18 +2252,27 @@ sources/0 = SubResource("TileSetAtlasSource_lg8qr")
 sources/2 = SubResource("TileSetAtlasSource_6k75r")
 sources/3 = SubResource("TileSetAtlasSource_ry26c")
 
-[node name="Ground(Level2)" type="Node2D"]
+[node name="Ground_Level2_design" type="Node2D"]
 
 [node name="ElementsBehindGround" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAB1ACIAAAAAAAIAAAB4ACIAAAAAAAIAAAB2ACEAAAAEAAAAAAB7ACIAAAAAAAIAAAB5ACIAAAAEAAAAAABMABcAAAAAAAIAAABPABcAAAAAAAIAAABNABYAAAAAAAIAAABOABUAAAAAAAIAAABPABYAAAAEAAAAAABQABYAAAAEAAAAAABRABYAAAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAB1ACIAAAAAAAIAAAB4ACIAAAAAAAIAAAB2ACEAAAAEAAAAAAB7ACIAAAAAAAIAAAB5ACIAAAAEAAAAAABMABcAAAAAAAIAAABPABcAAAAAAAIAAABNABYAAAAAAAIAAABOABUAAAAAAAIAAABPABYAAAAEAAAAAABQABYAAAAEAAAAAABRABYAAAAAAAIAAABQABcAAAAAAAIAAABSABUAAAAAAAIAAABTABYAAAAEAAAAAABTABcAAAAAAAIAAABUABYAAAAEAAAAAABVABYAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_fqbeh")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Ground" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(11131.6, 1142.75)
 shape = SubResource("RectangleShape2D_l7nit")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-64, 896)
+shape = SubResource("RectangleShape2D_aml8v")
+
+[node name="Fire" parent="." instance=ExtResource("2_sav54")]
+position = Vector2(3600, 1120)
 
 [node name="PlatformMapLevel2" type="TileMap" parent="."]
 position = Vector2(-40, 672)
@@ -2274,7 +2287,7 @@ tile_set = SubResource("TileSet_bm6pt")
 
 [node name="Props-Bigger" type="TileMapLayer" parent="PlatformMapLevel2"]
 position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAAHAAsAAAAAAAAAAAAbAAoAAgAAAAAAAACHAAoAAgAAAAAAAABtAAwAAQAAAAAAAACEAAwAAwAAAAAAAABhAAoAAgAAAAAAAABiAA0ABAAMAA0AAAA=")
+tile_map_data = PackedByteArray("AAAHAAsAAAAAAAAAAAAbAAoAAgAAAAAAAABtAAwAAQAAAAAAAABhAAoAAgAAAAAAAABiAA0ABAAMAA0AAACIAAwAAwAAAAAAAACLAAoAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_ypkow")
 
 [node name="Props-Smaller" type="TileMapLayer" parent="PlatformMapLevel2"]
