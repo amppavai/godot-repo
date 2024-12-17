@@ -127,9 +127,9 @@ animations = [{
 radius = 9.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bhk4"]
-size = Vector2(20, 45.9529)
+size = Vector2(20, 59.7882)
 
-[node name="Bat" type="CharacterBody2D"]
+[node name="Bat" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_e78dn")
@@ -150,13 +150,13 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 149)
+position = Vector2(0, 92.9999)
 scale = Vector2(27.9559, -8.09524)
 shape = SubResource("RectangleShape2D_5bhk4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_p5ulw")
-volume_db = -16.691
+volume_db = -29.53
 pitch_scale = 2.0
 autoplay = true
 bus = &"Enemies"

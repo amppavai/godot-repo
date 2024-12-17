@@ -11,7 +11,6 @@ var cd = false
 
 func _physics_process(delta: float) -> void:
 	var dist = player.position.distance_to(position)
-	print(dist)
 	if not cd and not isAttacking:
 		if target == false:
 			$AnimatedSprite2D.play("Idle")
@@ -35,9 +34,9 @@ func _physics_process(delta: float) -> void:
 			var collision = get_slide_collision(i)
 			var player = collision.get_collider()
 			
-			"""if player is Player:
+			if player is Player:
 				$Bite.play()
-				player.health -= 10"""
+				#player.health -= 10
 	if hp <= 0:
 		$AnimatedSprite2D.play("Death")
 	

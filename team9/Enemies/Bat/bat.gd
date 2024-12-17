@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var hp = 100
 var target
 var goingUp = false
-@export var player: Node2D
+var player
 @onready var yPos = position.y
 @onready var upPos = position
 
@@ -14,23 +14,24 @@ func _physics_process(delta: float) -> void:
 		velocity = position.direction_to(target) * speed
 		if position.distance_to(target) <= 10:
 			goingUp = true
-			target = player.position
 			var xPos
 			if position.x > target.x:
 				xPos = position.x - target.x
 			else:
 				xPos = target.x + (target.x - position.x)
 			upPos = Vector2(xPos, yPos)
+			target = player.position
 	elif hasTarget && goingUp:
 		if position.distance_to(upPos) <= 10:
 			goingUp = false
-			target = player.position
 			var xPos
 			if position.x > target.x:
 				xPos = position.x - target.x
 			else:
-				xPos = target.x + (target.x - position.x)
+				print(3)
+				xPos = target.x + (target.x - position.x) + 200
 			upPos = Vector2(xPos, yPos)
+			target = player.position
 		velocity = position.direction_to(upPos) * speed
 	if hp <= 0:
 		$AnimatedSprite2D.play("Death")
@@ -47,21 +48,22 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector2(0, 0)
 			
 	for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
-			var player = collision.get_collider()
-			
-			"""if player is Player:
-				player.health -= 10"""
+		var collision = get_slide_collision(i)
+		var player = collision.get_collider()
+		
+		"""if player is Player:
+			player.health -= 10"""
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body.get_collision_layer() == 2:
 		hasTarget = true
 		goingUp = false
 		target = body.position
+		player = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body is Player:
+	if body.get_collision_layer() == 2:
 		hasTarget = false
 
 func _on_animated_sprite_2d_animation_finished() -> void:

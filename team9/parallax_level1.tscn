@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7k6tadm7opca"]
+[gd_scene load_steps=10 format=3 uid="uid://cr3o5bglehkxi"]
 
 [ext_resource type="Texture2D" uid="uid://dnswhb4i81byl" path="res://Level Design/backgrounds/sky_cloud.png" id="1_2ah1j"]
 [ext_resource type="Texture2D" uid="uid://buyhssvjks6mr" path="res://Level Design/backgrounds/mountain2.png" id="2_k3pks"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cbcq7otx2obj" path="res://Level Design/backgrounds/pine1.png" id="4_2y8cu"]
 [ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://scenes/ground_level1.tscn" id="5_62sdc"]
 [ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="6_e7itc"]
+[ext_resource type="PackedScene" uid="uid://mtn6ja4qb8j6" path="res://Enemies/BearTrap/bear_trap.tscn" id="7_tosuo"]
+[ext_resource type="PackedScene" uid="uid://c46xpbmkxe4ox" path="res://Enemies/Bat/Bat.tscn" id="8_4fb0t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4besf"]
 radius = 6.58094
@@ -67,3 +69,17 @@ position = Vector2(58, -270)
 
 [node name="Player" parent="." instance=ExtResource("6_e7itc")]
 position = Vector2(37, 561)
+collision_layer = 2
+collision_mask = 5
+
+[node name="BearTrap" parent="." instance=ExtResource("7_tosuo")]
+position = Vector2(888, 844)
+
+[node name="BearTrap2" parent="." instance=ExtResource("7_tosuo")]
+position = Vector2(555, 737)
+
+[node name="BearTrap3" parent="." instance=ExtResource("7_tosuo")]
+position = Vector2(1421, 689)
+
+[node name="Bat" parent="." instance=ExtResource("8_4fb0t")]
+position = Vector2(1058, 676)
