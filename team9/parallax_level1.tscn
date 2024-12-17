@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://buyhssvjks6mr" path="res://Level Design/backgrounds/mountain2.png" id="2_k3pks"]
 [ext_resource type="Texture2D" uid="uid://gedfnvgwppu3" path="res://Level Design/backgrounds/pine2.png" id="3_7yvo1"]
 [ext_resource type="Texture2D" uid="uid://cbcq7otx2obj" path="res://Level Design/backgrounds/pine1.png" id="4_2y8cu"]
-[ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://scenes/ground_level1.tscn" id="5_62sdc"]
+[ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://Scenes/ground_level1.tscn" id="5_62sdc"]
 [ext_resource type="PackedScene" uid="uid://mtn6ja4qb8j6" path="res://Enemies/BearTrap/bear_trap.tscn" id="7_q3bmb"]
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="9_gch70"]
 
@@ -62,7 +62,8 @@ position = Vector2(58, -270)
 [node name="BearTrap" parent="." instance=ExtResource("7_q3bmb")]
 position = Vector2(848, 841)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("9_gch70")]
+[node name="Player_polina" parent="." instance=ExtResource("9_gch70")]
+position = Vector2(116, 493)
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -119,5 +120,5 @@ offset_bottom = 173.0
 scale = Vector2(0.5, 0.5)
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.3
-text = "bat here?"
+text = "bat here? Final boss, go to next level"
 metadata/_edit_use_anchors_ = true
