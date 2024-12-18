@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkuccpechujxp"]
+[gd_scene load_steps=12 format=3 uid="uid://dkuccpechujxp"]
 
 [ext_resource type="Texture2D" uid="uid://dnswhb4i81byl" path="res://Level Design/backgrounds/sky_cloud.png" id="1_2ah1j"]
 [ext_resource type="Texture2D" uid="uid://buyhssvjks6mr" path="res://Level Design/backgrounds/mountain2.png" id="2_k3pks"]
 [ext_resource type="Texture2D" uid="uid://gedfnvgwppu3" path="res://Level Design/backgrounds/pine2.png" id="3_7yvo1"]
 [ext_resource type="Texture2D" uid="uid://cbcq7otx2obj" path="res://Level Design/backgrounds/pine1.png" id="4_2y8cu"]
-[ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://scenes/ground_level1.tscn" id="5_62sdc"]
+[ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://Scenes/ground_level1.tscn" id="5_62sdc"]
+[ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="6_17fr0"]
 [ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="6_e7itc"]
 [ext_resource type="PackedScene" uid="uid://mtn6ja4qb8j6" path="res://Enemies/BearTrap/bear_trap.tscn" id="7_q3bmb"]
 [ext_resource type="PackedScene" uid="uid://c46xpbmkxe4ox" path="res://Enemies/Bat/Bat.tscn" id="8_4fb0t"]
@@ -68,7 +69,11 @@ shape = SubResource("CircleShape2D_4besf")
 [node name="Ground(Level1)" parent="." instance=ExtResource("5_62sdc")]
 position = Vector2(58, -270)
 
-[node name="Player" parent="." instance=ExtResource("6_e7itc")]
+[node name="MainPlayer(Polina)" parent="." instance=ExtResource("6_17fr0")]
+position = Vector2(57, 562)
+
+[node name="AniTestPlayer" parent="." instance=ExtResource("6_e7itc")]
+visible = false
 position = Vector2(37, 561)
 collision_layer = 2
 collision_mask = 13
@@ -79,8 +84,14 @@ position = Vector2(3458, 628)
 [node name="BearTrap" parent="." instance=ExtResource("7_q3bmb")]
 position = Vector2(867, 845)
 
-[node name="Slime" parent="." node_paths=PackedStringArray("A") instance=ExtResource("9_670tr")]
+[node name="Slime" parent="." node_paths=PackedStringArray("player", "A") instance=ExtResource("9_670tr")]
 position = Vector2(1591, 832)
+player = NodePath("../AniTestPlayer")
+A = NodePath("../SlimeDestination")
+
+[node name="Slime2" parent="." node_paths=PackedStringArray("player", "A") instance=ExtResource("9_670tr")]
+position = Vector2(2275, 832)
+player = NodePath("../AniTestPlayer")
 A = NodePath("../SlimeDestination")
 
 [node name="SlimeDestination" type="Node2D" parent="."]
