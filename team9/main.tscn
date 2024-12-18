@@ -7,8 +7,8 @@
 texture_filter = 1
 position = Vector2(-15, 176)
 
-[node name="Parallax_Level1" parent="." instance=ExtResource("2_i7ini")]
-position = Vector2(14, -713)
+[node name="Game_FirstLevel" parent="." instance=ExtResource("2_i7ini")]
+position = Vector2(24, -725)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_6fy3c")]
-position = Vector2(34, -146)
+position = Vector2(40, -156)

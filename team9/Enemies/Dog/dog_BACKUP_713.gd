@@ -9,7 +9,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAttacking = false
 @onready var timer = $Timer
 var cd = false
+<<<<<<< Updated upstream
+@onready var player = $"../ani_test_2"
+=======
 @onready var player = $"../MainPlayer(Polina)"
+>>>>>>> Stashed changes
 
 func _physics_process(delta: float) -> void:
 	if hasTarget:

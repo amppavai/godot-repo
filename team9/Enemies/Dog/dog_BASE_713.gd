@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAttacking = false
 @onready var timer = $Timer
 var cd = false
-@onready var player = $"../MainPlayer(Polina)"
+@onready var player = $"../Player_polina"
 
 func _physics_process(delta: float) -> void:
 	if hasTarget:
