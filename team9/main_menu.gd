@@ -3,7 +3,7 @@ extends CanvasLayer
 
 func _on_start_button_pressed() -> void: #Signal: When StartButton is pressed, it takes you to the Level 1.
 	#print("Scene change triggered!")
-	get_tree().change_scene_to_file("res://parallax_level1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/FirstLevel.tscn")
 
 func _on_options_button_pressed() -> void: #Signal: When OptionsButton is pressed, it takes you to the Options page.
 	get_tree().change_scene_to_file("res://UI/Options.tscn") 
