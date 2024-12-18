@@ -1,41 +1,122 @@
-[gd_scene load_steps=5 format=3 uid="uid://bci3xs1uhdtw1"]
+[gd_scene load_steps=10 format=3 uid="uid://bci3xs1uhdtw1"]
 
 [ext_resource type="Shader" path="res://UI/MainMenu.gdshader" id="1_hmo87"]
+[ext_resource type="Script" path="res://UI/credits.gd" id="1_p4f0k"]
 [ext_resource type="Texture2D" uid="uid://dw2cy0jyadthi" path="res://UI/Theme/Background_MainMenu.png" id="2_fu0os"]
-[ext_resource type="Texture2D" uid="uid://b8tiuk1skggrv" path="res://UI/Theme/Blackboard.png" id="3_8tg4o"]
+[ext_resource type="Texture2D" uid="uid://8n6bro1i1sl" path="res://UI/Theme/BackgroundFinal.png" id="4_fuens"]
+[ext_resource type="Texture2D" uid="uid://c7ur2i4qdefif" path="res://UI/Theme/DecorCredits.png" id="4_owow4"]
+[ext_resource type="Texture2D" uid="uid://bjprqiatxpvkp" path="res://UI/Theme/DecorCredits2.png" id="5_7c3dp"]
+[ext_resource type="FontFile" uid="uid://c2i478v7kckmf" path="res://UI/Theme/DungeonFont.ttf" id="5_8cjrw"]
+[ext_resource type="Theme" uid="uid://cioetp3wqiol1" path="res://UI/Theme/Buttontheme.tres" id="6_cx7sf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jcaoo"]
 shader = ExtResource("1_hmo87")
 shader_parameter/tint_color = Vector4(0, 0, 0, 0.5)
 
 [node name="Credits" type="Node2D"]
-position = Vector2(-6, 3)
-scale = Vector2(37.3411, 1.02297e+06)
+position = Vector2(1, 5)
+scale = Vector2(2097.73, -1.05907e+08)
+script = ExtResource("1_p4f0k")
 
-[node name="Credits background" type="CanvasLayer" parent="."]
+[node name="Credits" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Credits background"]
+[node name="TextureRect" type="TextureRect" parent="Credits"]
 material = SubResource("ShaderMaterial_jcaoo")
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+scale = Vector2(1, 0.991334)
 texture = ExtResource("2_fu0os")
+expand_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="Credits background"]
+[node name="TextureRect2" type="TextureRect" parent="Credits"]
 clip_contents = true
 anchors_preset = -1
-anchor_top = -0.039
-anchor_right = 1.0
-anchor_bottom = 1.031
-offset_left = 271.0
-offset_top = 154.78
-offset_right = -253.0
-offset_bottom = -129.62
+anchor_left = 0.145
+anchor_top = 0.095
+anchor_right = 0.872
+anchor_bottom = 0.898
+offset_left = 0.599976
+offset_top = 0.0999908
+offset_right = 0.759888
+offset_bottom = -11.9601
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 8
-texture = ExtResource("3_8tg4o")
+scale = Vector2(1, 1.01539)
+texture = ExtResource("4_fuens")
+expand_mode = 2
+
+[node name="BackButton" type="Button" parent="Credits"]
+offset_left = 144.0
+offset_top = 62.0
+offset_right = 330.0
+offset_bottom = 108.0
+scale = Vector2(0.351172, 0.351172)
+size_flags_horizontal = 0
+theme = ExtResource("6_cx7sf")
+toggle_mode = true
+action_mode = 0
+text = "Back⋆౨˚⟡˖ ࣪"
+metadata/_edit_use_anchors_ = true
+
+[node name="Decor" type="Sprite2D" parent="Credits"]
+position = Vector2(143, 13)
+scale = Vector2(4.59978, 4.72119)
+texture = ExtResource("4_owow4")
+centered = false
+
+[node name="Decor2" type="TextureRect" parent="Credits"]
+offset_left = 148.0
+offset_top = -22.0
+offset_right = 228.0
+offset_bottom = 18.0
+rotation = 1.57079
+scale = Vector2(4.55122, 1.11443)
+texture = ExtResource("5_7c3dp")
+
+[node name="Label" type="Label" parent="Credits"]
+offset_left = 289.0
+offset_top = 74.0
+offset_right = 352.0
+offset_bottom = 99.0
+theme = ExtResource("6_cx7sf")
+theme_type_variation = &"HeaderMedium"
+theme_override_colors/font_color = Color(0.0509804, 0.564706, 0.407843, 1)
+theme_override_colors/font_shadow_color = Color(0.123737, 0.345138, 0.171292, 1)
+theme_override_fonts/font = ExtResource("5_8cjrw")
+text = "Credits"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Credits"]
+position = Vector2(517, 156)
+rotation = 1.57079
+scale = Vector2(4.59566, 2.67711)
+texture = ExtResource("5_7c3dp")
+
+[node name="Credits Script" type="RichTextLabel" parent="Credits"]
+offset_left = 153.0
+offset_top = 109.0
+offset_right = 483.0
+offset_bottom = 199.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_8cjrw")
+text = "\"The last explorer\" is a project for the course Creative Media Programing in Digital Media major. Ajou Unversity.
+
+Yolanda Vera Salmeron: UI / Music  / Collectibles
+
+Ani Vainio: Background / Level Design and Development
+
+Polina Vizer: Main Character / Tools
+
+Xavier Luong: Enemies / Weapons
+
+"
+scroll_following = true
+
+[connection signal="pressed" from="Credits/BackButton" to="." method="_on_back_button_pressed"]
