@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAttacking = false
 @onready var timer = $Timer
 var cd = false
-@export var player: Node2D
+@onready var player = $"../ani_test_2"
 
 func _physics_process(delta: float) -> void:
 	if hasTarget:
