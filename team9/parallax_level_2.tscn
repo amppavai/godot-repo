@@ -82,7 +82,7 @@ texture = ExtResource("7_uel2h")
 position = Vector2(28, -250)
 scale = Vector2(0.5, 0.5)
 
-[node name="ani_test_2" parent="." instance=ExtResource("9_153vq")]
+[node name="ani_test_player_2" parent="." instance=ExtResource("9_153vq")]
 position = Vector2(66, 52)
 
 [node name="Player_polina" parent="." instance=ExtResource("10_nyvxe")]
