@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c11sialomk8mk"]
+[gd_scene load_steps=12 format=3 uid="uid://c11sialomk8mk"]
 
 [ext_resource type="Texture2D" uid="uid://35mj6dgr6c3s" path="res://Level Design/backgrounds/sky copy.png" id="1_todo5"]
 [ext_resource type="Texture2D" uid="uid://c65mo2nnkd3t7" path="res://Level Design/backgrounds/clouds2.png" id="2_hx326"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dp1ugck7bs761" path="res://Level Design/backgrounds/car_trees_etc.png" id="6_sbf1j"]
 [ext_resource type="Texture2D" uid="uid://bp0bg8enxl7cy" path="res://Level Design/backgrounds/sand&objects2.png" id="7_xvhkv"]
 [ext_resource type="PackedScene" uid="uid://3ep3ywau3l5y" path="res://Scenes/second_level_design.tscn" id="8_pjyhu"]
-[ext_resource type="PackedScene" uid="uid://x4671hyjwij6" path="res://test_player_ani/ani_test_2.tscn" id="9_kqjmu"]
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="10_uqii3"]
 [ext_resource type="PackedScene" uid="uid://dom5xm5kfkvgi" path="res://Enemies/Fire/Fire.tscn" id="11_ftm8x"]
 [ext_resource type="PackedScene" uid="uid://dx3olc3g3uxsg" path="res://Enemies/Dog/Dog.tscn" id="12_ojwgk"]
@@ -84,12 +83,7 @@ texture = ExtResource("7_xvhkv")
 position = Vector2(28, -250)
 scale = Vector2(0.5, 0.497951)
 
-[node name="ani_test_player_2" parent="." instance=ExtResource("9_kqjmu")]
-position = Vector2(66, 52)
-collision_mask = 5
-
 [node name="Player_polina" parent="." instance=ExtResource("10_uqii3")]
-visible = false
 position = Vector2(65, 19)
 
 [node name="Fire" parent="." instance=ExtResource("11_ftm8x")]
