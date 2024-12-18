@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var jump_velocity = -350.0
-
+@onready var bullet_scene = load("res://Scenes/Bullet.tscn")  # Preload the bullet scene.
 const speed = 100
 var current_dir = "none"
 var usegun = false
@@ -30,7 +30,9 @@ func _physics_process(delta):
 		else:
 			usegun = false
 		
-		
+	if is_key_just_pressed(KEY_Q):
+		if usegun == true:
+			shoot_bullet()	
 	
 	player_movement(delta)
 		
@@ -112,3 +114,21 @@ func is_key_just_pressed(key):
 	key_states[key] = is_pressed_now
 	# Return true only if the key is now pressed but wasn't before
 	return is_pressed_now and not was_pressed_before
+	
+# Shoot a bullet
+func shoot_bullet():
+	var bullet = bullet_scene.instantiate()  # Create a bullet instance.
+	get_parent().add_child(bullet)  # Add bullet to the scene.
+	
+	# Set bullet position and direction.
+	bullet.position = position
+	if current_dir == "left":
+		bullet.rotation =  PI
+	else:
+		bullet.rotation = 0  # Rotate if shooting left.
+	
+	# Apply velocity to the bullet based on direction.
+	if current_dir == "left":
+		bullet.linear_velocity = Vector2(-bullet.speed, 0)
+	else:
+		bullet.linear_velocity = Vector2(bullet.speed, 0)
