@@ -71,5 +71,5 @@ func _on_timer_timeout() -> void:
 
 
 func _on_hit_body_entered(body: Node2D) -> void:
-	if body.get_collision_layer() == 2:
+	if body is Player:
 		$AnimatedSprite2D.play("Death")
