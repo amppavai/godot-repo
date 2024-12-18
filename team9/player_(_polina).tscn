@@ -1,18 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cedbb5u7iygx8"]
+[gd_scene load_steps=13 format=3 uid="uid://cedbb5u7iygx8"]
 
-[ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://player_tilemap/tilemap.png" id="1_ok7ks"]
+[ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://Level Design/player_tilemap/tilemap.png" id="1_ok7ks"]
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_qqm8g"]
+[ext_resource type="AudioStream" uid="uid://76roqu4clsf6" path="res://Music/Audio assets/StepsLevel1.ogg" id="3_is451"]
+[ext_resource type="AudioStream" uid="uid://8hojfy6kcsl7" path="res://Music/Audio assets/BackgroundMusicLevel01.ogg" id="4_osvaa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wjhs"]
-radius = 10.25
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1h3e"]
 atlas = ExtResource("1_ok7ks")
 region = Rect2(17, 68, 17, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_egx2t"]
-atlas = ExtResource("1_ok7ks")
-region = Rect2(85, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kwvp"]
 atlas = ExtResource("1_ok7ks")
@@ -26,6 +23,10 @@ region = Rect2(0, 68, 17, 17)
 atlas = ExtResource("1_ok7ks")
 region = Rect2(34, 68, 17, 17)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_egx2t"]
+atlas = ExtResource("1_ok7ks")
+region = Rect2(85, 68, 17, 17)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6abo"]
 atlas = ExtResource("1_ok7ks")
 region = Rect2(102, 68, 17, 17)
@@ -38,14 +39,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"gun jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_egx2t")
-}],
-"loop": true,
-"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -89,12 +82,24 @@ shape = SubResource("CircleShape2D_6wjhs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
-position = Vector2(-0.5, -4)
+position = Vector2(-0.124966, 0.37498)
 scale = Vector2(1.51471, 1.45588)
 sprite_frames = SubResource("SpriteFrames_n3p2g")
-animation = &"idle"
+animation = &"walk"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_top = 0
 limit_bottom = 235
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_is451")
+volume_db = -8.139
+pitch_scale = 1.68
+autoplay = true
+attenuation = 1.7411
+parameters/looping = false
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_osvaa")
+volume_db = 12.878
+autoplay = true
