@@ -2,42 +2,40 @@
 extends CharacterBody2D
 
 @export var speed = 150
-@onready var target = false
+var target
+var hasTarget = false
 @export var hp = 100
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isAttacking = false
-@onready var player = $"../Player ( Polina)"
 @onready var timer = $Timer
 var cd = false
+@export var player: Node2D
 
 func _physics_process(delta: float) -> void:
-	var dist = player.position.distance_to(position)
-	if not cd and not isAttacking:
-		if target == false:
-			$AnimatedSprite2D.play("Idle")
-		elif dist <= 31:
-			if player.position.x > position.x:
+	if hasTarget:
+		target = player.position
+		if position.distance_to(target) > 31 and not isAttacking:
+			$AnimatedSprite2D.play("Run")
+			velocity = position.direction_to(target) * speed
+			if target.x > position.x:
 				$AnimatedSprite2D.flip_h = true
 			else:
 				$AnimatedSprite2D.flip_h = false
+		elif not isAttacking and not cd:
 			$AnimatedSprite2D.play("Attack")
 			isAttacking = true
-		else:
-			$AnimatedSprite2D.play("Run")
-			velocity = position.direction_to(player.position) * speed
-			if player.position.x > position.x:
-				$AnimatedSprite2D.flip_h = true
-			else:
-				$AnimatedSprite2D.flip_h = false
-	elif not cd:
+		elif isAttacking:
+			velocity.x = 0
+			for i in get_slide_collision_count():
+				var collision = get_slide_collision(i)
+				var player = collision.get_collider()
+				
+				if player is Player:
+					$Bite.play()
+					#player.health -= 10
+	else:
+		$AnimatedSprite2D.play("Idle")
 		velocity.x = 0
-		for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
-			var player = collision.get_collider()
-			
-			if player is Player:
-				$Bite.play()
-				#player.health -= 10
 	if hp <= 0:
 		$AnimatedSprite2D.play("Death")
 	
@@ -47,7 +45,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Attack":
-		print("after attack " + str(scale.x))
+		print("end attack")
 		isAttacking = false
 		cd = true
 		$Timer.start(1)
@@ -59,11 +57,12 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		modulate = Color.DARK_RED
-		target = true
+		isAttacking = false
+		hasTarget = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is Player:
-		target = false
+		hasTarget = false
 		modulate = Color.WHITE
 
 func _on_timer_timeout() -> void:

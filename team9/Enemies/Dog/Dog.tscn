@@ -210,6 +210,8 @@ height = 34.0
 radius = 71.361
 
 [node name="Dog" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_4pclu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -227,7 +229,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(2.52502, 0.613426)
+scale = Vector2(5.60502, 1.25343)
 shape = SubResource("CircleShape2D_o82w5")
 
 [node name="Timer" type="Timer" parent="."]

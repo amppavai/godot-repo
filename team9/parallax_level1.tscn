@@ -79,9 +79,8 @@ position = Vector2(3458, 628)
 [node name="BearTrap" parent="." instance=ExtResource("7_q3bmb")]
 position = Vector2(867, 845)
 
-[node name="Slime" parent="." node_paths=PackedStringArray("player", "A") instance=ExtResource("9_670tr")]
+[node name="Slime" parent="." node_paths=PackedStringArray("A") instance=ExtResource("9_670tr")]
 position = Vector2(1591, 832)
-player = NodePath("../Player")
 A = NodePath("../SlimeDestination")
 
 [node name="SlimeDestination" type="Node2D" parent="."]
