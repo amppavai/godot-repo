@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-@export var jump_velocity = -300.0
+@export var jump_velocity = -350.0
 
 const speed = 100
 var current_dir = "none"

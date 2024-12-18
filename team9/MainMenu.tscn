@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://UI/MainMenu.gdshader" id="1_5d668"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_xqyqg"]
 [ext_resource type="Texture2D" uid="uid://cho7bcsv2aif5" path="res://UI/Theme/BackgroundButtonsFinal.png" id="2_aw0qy"]
-[ext_resource type="Theme" uid="uid://cioetp3wqiol1" path="res://UI/Theme/Buttontheme.tres" id="2_f5q66"]
+[ext_resource type="Theme" uid="uid://cioetp3wqiol1" path="res://UI/Theme/theme.tres" id="2_f5q66"]
 [ext_resource type="FontFile" uid="uid://c2i478v7kckmf" path="res://UI/Theme/DungeonFont.ttf" id="3_ks551"]
 [ext_resource type="Texture2D" uid="uid://cjm885jf3mu23" path="res://UI/Theme/BackgroundButtons1.png" id="5_kt3n4"]
 
