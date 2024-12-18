@@ -1,3 +1,96 @@
-[gd_scene format=3 uid="uid://gpdg4g3wk2e8"]
+[gd_scene load_steps=9 format=3 uid="uid://gpdg4g3wk2e8"]
+
+[ext_resource type="Script" path="res://UI/options.gd" id="1_15tix"]
+[ext_resource type="Shader" path="res://UI/MainMenu.gdshader" id="1_ople7"]
+[ext_resource type="Texture2D" uid="uid://dw2cy0jyadthi" path="res://UI/Theme/Background_MainMenu.png" id="2_m7v3c"]
+[ext_resource type="Texture2D" uid="uid://bu5h76bvkw7gf" path="res://UI/OptionsPaper.png" id="3_46n25"]
+[ext_resource type="Theme" uid="uid://b5hg0l81h00ca" path="res://UI/Theme/ScrollButtontheme.tres" id="4_c2fb4"]
+[ext_resource type="FontFile" uid="uid://c2i478v7kckmf" path="res://UI/Theme/DungeonFont.ttf" id="4_fibku"]
+[ext_resource type="Theme" uid="uid://cioetp3wqiol1" path="res://UI/Theme/Buttontheme.tres" id="7_yra0e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tdorh"]
+shader = ExtResource("1_ople7")
+shader_parameter/tint_color = Vector4(0, 0, 0, 0.5)
 
 [node name="Options" type="Node2D"]
+position = Vector2(-1, -1)
+script = ExtResource("1_15tix")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_tdorh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.991334)
+texture = ExtResource("2_m7v3c")
+expand_mode = 5
+
+[node name="Story" type="TextureRect" parent="CanvasLayer"]
+offset_left = 341.0
+offset_top = 9.0
+offset_right = 757.0
+offset_bottom = 457.0
+scale = Vector2(0.655213, 0.730954)
+texture = ExtResource("3_46n25")
+
+[node name="OptionsScript" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 393.0
+offset_top = 71.0
+offset_right = 563.0
+offset_bottom = 291.0
+theme = ExtResource("4_c2fb4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(2.28621e-07, 0.303181, 0.139279, 1)
+theme_override_fonts/normal_font = ExtResource("4_fibku")
+text = "I am Po, born from the human-less Earth.
+
+I have heard whispers of them, stories of beings who walked the earth long before my kind, leaving relics and secrets scattered like seeds behind.
+
+They say humans were masters of this world, shaping and reshaping it with fire, stone, and dreams.
+
+Perhaps, somewhere out there, their stories are waiting for me to find them.
+Or even better, what if they are still somewhere...out there...?
+
+-Po
+
+
+"
+tab_size = 1
+
+[node name="Mute" type="CheckButton" parent="CanvasLayer"]
+visible = false
+offset_left = 65.0
+offset_top = 92.0
+offset_right = 109.0
+offset_bottom = 116.0
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+visible = false
+offset_left = 56.0
+offset_top = 136.0
+offset_right = 277.0
+offset_bottom = 240.0
+
+[node name="BackButton" type="Button" parent="CanvasLayer"]
+offset_left = 52.0
+offset_top = 40.0
+offset_right = 238.0
+offset_bottom = 86.0
+scale = Vector2(0.502465, 0.502465)
+size_flags_horizontal = 0
+theme = ExtResource("7_yra0e")
+toggle_mode = true
+action_mode = 0
+text = "Back⋆౨˚⟡˖ ࣪"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]
