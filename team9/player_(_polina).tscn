@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cedbb5u7iygx8"]
+[gd_scene load_steps=15 format=3 uid="uid://cedbb5u7iygx8"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_qqm8g"]
 [ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://player_tilemap/tilemap.png" id="2_uydi4"]
 [ext_resource type="AudioStream" uid="uid://76roqu4clsf6" path="res://Music/Audio assets/StepsLevel1.ogg" id="3_is451"]
-[ext_resource type="Texture2D" uid="uid://dhvwi4w5ydmif" path="res://tilemap.png" id="3_vkphw"]
 [ext_resource type="AudioStream" uid="uid://8hojfy6kcsl7" path="res://Music/Audio assets/BackgroundMusicLevel01.ogg" id="4_osvaa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wjhs"]
@@ -17,23 +16,23 @@ atlas = ExtResource("2_uydi4")
 region = Rect2(1, 70, 16, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kwvp"]
-atlas = ExtResource("3_vkphw")
+atlas = ExtResource("2_uydi4")
 region = Rect2(102, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylkgw"]
-atlas = ExtResource("3_vkphw")
+atlas = ExtResource("2_uydi4")
 region = Rect2(0, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmfbc"]
-atlas = ExtResource("3_vkphw")
+atlas = ExtResource("2_uydi4")
 region = Rect2(34, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egx2t"]
-atlas = ExtResource("3_vkphw")
+atlas = ExtResource("2_uydi4")
 region = Rect2(85, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6abo"]
-atlas = ExtResource("3_vkphw")
+atlas = ExtResource("2_uydi4")
 region = Rect2(102, 68, 17, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_178yb"]
