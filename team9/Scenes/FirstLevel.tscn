@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dkuccpechujxp"]
+[gd_scene load_steps=10 format=3 uid="uid://dkuccpechujxp"]
 
 [ext_resource type="Texture2D" uid="uid://dnswhb4i81byl" path="res://Level Design/backgrounds/sky_cloud.png" id="1_2ah1j"]
 [ext_resource type="Texture2D" uid="uid://buyhssvjks6mr" path="res://Level Design/backgrounds/mountain2.png" id="2_k3pks"]
@@ -6,13 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cbcq7otx2obj" path="res://Level Design/backgrounds/pine1.png" id="4_2y8cu"]
 [ext_resource type="PackedScene" uid="uid://chu16rr4cv5q4" path="res://Scenes/first_level_design.tscn" id="5_62sdc"]
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="6_17fr0"]
-[ext_resource type="PackedScene" uid="uid://dod0spc7cpbem" path="res://test_player_ani/ani_test_player.tscn" id="6_e7itc"]
 [ext_resource type="PackedScene" uid="uid://mtn6ja4qb8j6" path="res://Enemies/BearTrap/bear_trap.tscn" id="7_q3bmb"]
 [ext_resource type="PackedScene" uid="uid://c46xpbmkxe4ox" path="res://Enemies/Bat/Bat.tscn" id="8_4fb0t"]
 [ext_resource type="PackedScene" uid="uid://cc8owolabuxl1" path="res://Enemies/Slime/Slime.tscn" id="9_670tr"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4besf"]
-radius = 6.58094
 
 [node name="Game_FirstLevel" type="Node2D"]
 position = Vector2(0, -532)
@@ -59,24 +55,11 @@ position = Vector2(0, 189)
 texture = ExtResource("4_2y8cu")
 centered = false
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1335, 292)
-scale = Vector2(-4.56093, 4.75249)
-shape = SubResource("CircleShape2D_4besf")
-
 [node name="first_level_design" parent="." instance=ExtResource("5_62sdc")]
 position = Vector2(58, -270)
 
 [node name="MainPlayer(Polina)" parent="." instance=ExtResource("6_17fr0")]
 position = Vector2(57, 562)
-
-[node name="AniTestPlayer" parent="." instance=ExtResource("6_e7itc")]
-visible = false
-position = Vector2(37, 561)
-collision_layer = 2
-collision_mask = 13
 
 [node name="Bat" parent="." instance=ExtResource("8_4fb0t")]
 position = Vector2(3458, 628)
@@ -86,10 +69,6 @@ position = Vector2(867, 845)
 
 [node name="Slime" parent="." node_paths=PackedStringArray("A") instance=ExtResource("9_670tr")]
 position = Vector2(1591, 832)
-A = NodePath("../SlimeDestination")
-
-[node name="Slime2" parent="." node_paths=PackedStringArray("A") instance=ExtResource("9_670tr")]
-position = Vector2(2275, 832)
 A = NodePath("../SlimeDestination")
 
 [node name="SlimeDestination" type="Node2D" parent="."]
