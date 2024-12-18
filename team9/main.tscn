@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://c2lukbpjymy40"]
+[gd_scene load_steps=3 format=3 uid="uid://c2lukbpjymy40"]
 
-[node name="main(yolanda)" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="2_6fy3c"]
+[ext_resource type="PackedScene" uid="uid://dkuccpechujxp" path="res://Scenes/FirstLevel.tscn" id="2_i7ini"]
+
+[node name="Main" type="Node2D"]
+texture_filter = 1
+position = Vector2(-15, 176)
+
+[node name="Parallax_Level1" parent="." instance=ExtResource("2_i7ini")]
+position = Vector2(14, -713)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_6fy3c")]
+position = Vector2(34, -146)

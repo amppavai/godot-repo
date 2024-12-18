@@ -1,0 +1,5 @@
+[gd_resource type="AudioStreamOggVorbis" format=3 uid="uid://slr8p6y763bg"]
+
+[resource]
+bpm = 59.41
+loop = true

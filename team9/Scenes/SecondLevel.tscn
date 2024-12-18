@@ -1,0 +1,101 @@
+[gd_scene load_steps=12 format=3 uid="uid://c11sialomk8mk"]
+
+[ext_resource type="Texture2D" uid="uid://35mj6dgr6c3s" path="res://Level Design/backgrounds/sky copy.png" id="1_todo5"]
+[ext_resource type="Texture2D" uid="uid://c65mo2nnkd3t7" path="res://Level Design/backgrounds/clouds2.png" id="2_hx326"]
+[ext_resource type="Texture2D" uid="uid://byabx1tben26r" path="res://Level Design/backgrounds/houses&trees_bg.png" id="3_1eg1u"]
+[ext_resource type="Texture2D" uid="uid://c6ng0e7pc6gxn" path="res://Level Design/backgrounds/houses.png" id="4_rq4xl"]
+[ext_resource type="Texture2D" uid="uid://rctxc85etpnr" path="res://Level Design/decor/city/train.png" id="5_y8r5j"]
+[ext_resource type="Texture2D" uid="uid://dp1ugck7bs761" path="res://Level Design/backgrounds/car_trees_etc.png" id="6_sbf1j"]
+[ext_resource type="Texture2D" uid="uid://bp0bg8enxl7cy" path="res://Level Design/backgrounds/sand&objects2.png" id="7_xvhkv"]
+[ext_resource type="PackedScene" uid="uid://3ep3ywau3l5y" path="res://Scenes/second_level_design.tscn" id="8_pjyhu"]
+[ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="10_uqii3"]
+[ext_resource type="PackedScene" uid="uid://dom5xm5kfkvgi" path="res://Enemies/Fire/Fire.tscn" id="11_ftm8x"]
+[ext_resource type="PackedScene" uid="uid://dx3olc3g3uxsg" path="res://Enemies/Dog/Dog.tscn" id="12_ojwgk"]
+
+[node name="Game_SecondLevel" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+texture = ExtResource("1_todo5")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+texture_filter = 1
+texture = ExtResource("2_hx326")
+centered = false
+
+[node name="Far buildings" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Far buildings"]
+texture_filter = 1
+texture = ExtResource("3_1eg1u")
+centered = false
+
+[node name="Near buildings" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0)
+motion_mirroring = Vector2(688, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Near buildings"]
+texture_filter = 1
+texture = ExtResource("4_rq4xl")
+centered = false
+
+[node name="Train" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Train"]
+texture_filter = 1
+position = Vector2(960, 507.5)
+texture = ExtResource("5_y8r5j")
+centered = false
+
+[node name="Car and trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1288, 193)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Car and trees"]
+texture_filter = 1
+position = Vector2(-163.5, -0.999985)
+texture = ExtResource("6_sbf1j")
+centered = false
+
+[node name="ThemePark" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ThemePark"]
+position = Vector2(3143.75, 277.5)
+texture = ExtResource("7_xvhkv")
+
+[node name="second_level_design" parent="." instance=ExtResource("8_pjyhu")]
+position = Vector2(28, -250)
+scale = Vector2(0.5, 0.497951)
+
+[node name="Player_polina" parent="." instance=ExtResource("10_uqii3")]
+position = Vector2(65, 19)
+
+[node name="Fire" parent="." instance=ExtResource("11_ftm8x")]
+position = Vector2(1824, 308)
+
+[node name="Fire2" parent="." instance=ExtResource("11_ftm8x")]
+position = Vector2(1974, 309)
+
+[node name="Fire3" parent="." instance=ExtResource("11_ftm8x")]
+position = Vector2(2121, 308)
+
+[node name="Dog" parent="." instance=ExtResource("12_ojwgk")]
+position = Vector2(3364, 292)
+collision_layer = 2
+collision_mask = 5
