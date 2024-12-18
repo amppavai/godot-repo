@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b60ht8f7fbo5a"
+path="res://.godot/imported/mixkit-valley-sunset-127 (1).ogg-06cd0aad20ca5f4a217cd4cb6c402546.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Audio assets/mixkit-valley-sunset-127 (1).ogg"
+dest_files=["res://.godot/imported/mixkit-valley-sunset-127 (1).ogg-06cd0aad20ca5f4a217cd4cb6c402546.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
