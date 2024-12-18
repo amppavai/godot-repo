@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://rctxc85etpnr" path="res://Level Design/decor/city/train.png" id="5_tkowv"]
 [ext_resource type="Texture2D" uid="uid://dp1ugck7bs761" path="res://Level Design/backgrounds/car_trees_etc.png" id="6_qqdha"]
 [ext_resource type="Texture2D" uid="uid://bp0bg8enxl7cy" path="res://Level Design/backgrounds/sand&objects2.png" id="7_0weic"]
-[ext_resource type="PackedScene" uid="uid://3ep3ywau3l5y" path="res://ground_level2.tscn" id="8_uj615"]
+[ext_resource type="PackedScene" uid="uid://3ep3ywau3l5y" path="res://Scenes/second_level_design.tscn" id="8_uj615"]
 [ext_resource type="PackedScene" uid="uid://x4671hyjwij6" path="res://test_player_ani/ani_test_2.tscn" id="9_rfv26"]
 [ext_resource type="PackedScene" uid="uid://cedbb5u7iygx8" path="res://player_(_polina).tscn" id="10_nqlje"]
 [ext_resource type="PackedScene" uid="uid://dom5xm5kfkvgi" path="res://Enemies/Fire/Fire.tscn" id="11_cbqxk"]
