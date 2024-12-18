@@ -96,7 +96,12 @@ func play_anim (movement):
 			anim.play("idle_gun")
 			
 		
-
+		
+func update_key_state(key):
+	if key not in key_states:
+		key_states[key] = Input.is_key_pressed(key)
+	else:
+		key_states[key] = Input.is_key_pressed(key)
 # Function to track if a key was just pressed
 func is_key_just_pressed(key):
 	# Get the current state of the key
