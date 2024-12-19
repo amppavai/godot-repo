@@ -51,6 +51,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		$Timer.start(1)
 		$AnimatedSprite2D.play("Idle")
 	elif $AnimatedSprite2D.animation == "Death":
+		remove_from_group("Enemy")
 		queue_free()
 
 
@@ -67,3 +68,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	cd = false
+
+
+func _on_hit_body_entered(body: Node2D) -> void:
+	if body is Player:
+		$AnimatedSprite2D.play("Death")

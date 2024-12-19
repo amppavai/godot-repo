@@ -52,4 +52,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Attack":
 		isAttacking = false
 	elif $AnimatedSprite2D.animation == "Death":
+		remove_from_group("Enemy")
 		queue_free()
+
+
+func _on_hit_body_entered(body: Node2D) -> void:
+	if body is Player:
+		$AnimatedSprite2D.play("Death")
