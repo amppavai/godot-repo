@@ -113,7 +113,8 @@ animation = &"using gun"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_bottom = 500
+limit_top = 0
+limit_bottom = 200
 
 [node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_is451")

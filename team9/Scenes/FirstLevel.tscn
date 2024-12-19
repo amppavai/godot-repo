@@ -56,10 +56,10 @@ texture = ExtResource("4_2y8cu")
 centered = false
 
 [node name="first_level_design" parent="." instance=ExtResource("5_62sdc")]
-position = Vector2(65, -121)
+position = Vector2(54, -275)
 
 [node name="MainPlayer(Polina)" parent="." instance=ExtResource("6_17fr0")]
-position = Vector2(57, 562)
+position = Vector2(79, 570)
 
 [node name="Bat" parent="." instance=ExtResource("8_4fb0t")]
 position = Vector2(3458, 628)
