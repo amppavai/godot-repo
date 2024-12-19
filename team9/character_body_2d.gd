@@ -1,8 +1,9 @@
+#file owner polina
 extends CharacterBody2D
 
 class_name Player
 
-@export var jump_velocity = -350.0
+@export var jump_velocity = -400.0 #changed from -350.0 to -500.0m by Ani
 
 const speed = 100
 var current_dir = "none"

@@ -59,7 +59,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Train"]
 texture_filter = 1
-position = Vector2(960, 507.5)
+position = Vector2(800, 507.5)
 texture = ExtResource("5_y8r5j")
 centered = false
 
@@ -69,33 +69,34 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Car and trees"]
 texture_filter = 1
-position = Vector2(-163.5, -0.999985)
+position = Vector2(-413.5, 3.99999)
 texture = ExtResource("6_sbf1j")
 centered = false
 
 [node name="ThemePark" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -1.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ThemePark"]
-position = Vector2(3143.75, 277.5)
+position = Vector2(3132.5, 277.5)
 texture = ExtResource("7_xvhkv")
 
 [node name="second_level_design" parent="." instance=ExtResource("8_pjyhu")]
-position = Vector2(28, -250)
+position = Vector2(26, -249)
 scale = Vector2(0.5, 0.497951)
 
 [node name="Player_polina" parent="." instance=ExtResource("10_uqii3")]
-position = Vector2(65, 19)
+position = Vector2(66, 225)
 
 [node name="Fire" parent="." instance=ExtResource("11_ftm8x")]
-position = Vector2(1824, 308)
+position = Vector2(1822, 309)
 
 [node name="Fire2" parent="." instance=ExtResource("11_ftm8x")]
-position = Vector2(1974, 309)
+position = Vector2(1961, 309)
 
 [node name="Fire3" parent="." instance=ExtResource("11_ftm8x")]
-position = Vector2(2121, 308)
+position = Vector2(2109, 309)
 
 [node name="Dog" parent="." instance=ExtResource("12_ojwgk")]
-position = Vector2(3364, 292)
+position = Vector2(3129, 294)
 collision_layer = 2
 collision_mask = 5

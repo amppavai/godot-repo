@@ -98,7 +98,6 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_qqm8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -114,7 +113,8 @@ animation = &"using gun"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_bottom = 500
+limit_top = 0
+limit_bottom = 200
 
 [node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_is451")
