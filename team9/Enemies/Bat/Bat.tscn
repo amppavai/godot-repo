@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c46xpbmkxe4ox"]
+[gd_scene load_steps=23 format=3 uid="uid://c46xpbmkxe4ox"]
 
 [ext_resource type="Script" path="res://Enemies/Bat/bat.gd" id="1_e78dn"]
 [ext_resource type="Texture2D" uid="uid://cb7g32csq4n0j" path="res://Enemies/Bat/Bat_Death.png" id="1_y7jwu"]
@@ -129,9 +129,6 @@ radius = 9.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bhk4"]
 size = Vector2(20, 59.7882)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn6wb"]
-size = Vector2(17, 7)
-
 [node name="Bat" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
 collision_mask = 3
@@ -167,14 +164,7 @@ parameters/looping = true
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Hit" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit"]
-position = Vector2(-1.5, -11)
-shape = SubResource("RectangleShape2D_wn6wb")
-
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Hit" to="." method="_on_hit_body_entered"]
